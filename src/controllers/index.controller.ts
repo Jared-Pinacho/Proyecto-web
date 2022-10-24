@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 export function indexResponse(req: Request, res: Response) {
   const data = { title: "Programacion web" };
-  return res.render("index", data);
+  return res.render("index");
 }
 
 export function mainResponse(req: Request, res: Response): Response {

@@ -1,7 +1,8 @@
 import {Router} from "express";
-import {createExample} from "../controllers/example.controller"
+import {createExample,viewFormExample} from "../controllers/example.controller"
 const exampleRouter: Router = Router();
 
-exampleRouter.get("/create/:idStatus/:status/:description",createExample);
+exampleRouter.post("/create",createExample);
+exampleRouter.get("/view/form",viewFormExample);
 
 export default exampleRouter;
