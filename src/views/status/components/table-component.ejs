@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <th>
+            <tr>
+                <td>#</td>
+                <td>Status</td>
+                <td>description</td>
+            </tr>
+        </th>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<records.length ;i++){ %> 
+            <tr>
+                <td><%=records[i]["idStatus"]  %></td>
+                <td><%=records[i]["status"]  %></td>
+                <td><%=records[i]["description"]  %></td>
+            </tr>
+        <% } %> 
+    </tbody>
+</table>
