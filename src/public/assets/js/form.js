@@ -4,9 +4,9 @@ const form = (() => {
   const $inputDescription = document.getElementById("description");
 
   const _sendActionForm = (event = {}) => {
-    if($inputStatus.value === '' && $inputDescription.value === ''){
-        event.preventDefault();
-        alert("Todos los campos son requeridos");
+    if ($inputStatus.value === "" || $inputDescription.value === "") {
+      event.preventDefault();
+      alert("Todos los campos son requeridos");
     }
   };
 
@@ -22,3 +22,4 @@ const form = (() => {
 })();
 
 form.init();
+
