@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include("comunes/components/headers-component") -%>
 </head>
-<body>
-    <button id="btnObtener">Obtener</button>
+<body class="container">
+
+    <%- include("status/components/form-component")  -%>
     <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
         <tbody id="data"></tbody>
     </table>
-    <script src="/assets/js/main.js"></script>
+    <%- include("comunes/components/footer-component") -%>
 </body>
 </html>

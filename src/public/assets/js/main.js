@@ -1,12 +1,61 @@
-const $btn = document.getElementById("btnObtener");
-const $bodyTable = document.getElementById("data");
+const main = (() => {
+  const $bodyTable = document.getElementById("data");
+  const BASE_URL = "http://localhost:4000/api/v2/example";
 
-$btn.addEventListener("click",async (event) => {
-    const response = await fetch('http://localhost:4000/api/v1/example/listar')
-    const body = await response.json();
-    for (let index = 0; index < body.length; index++) {
-        const status = body[index]["status"];
-        const htlm = `<tr><td>${status}</td></tr>`;
-        $bodyTable.innerHTML +=htlm;
+  const _getData = async () => {
+    const response = await http.get(BASE_URL);
+    for (let index = 0; index < response.length; index++) {
+      const $row = _createRow(response[index], "idStatus");
+      $bodyTable.appendChild($row);
     }
-});
+  };
+
+  const _actionButtonEditar = async (event) => {
+    const $btn = event.target;
+    const idStatus = $btn.getAttribute("item-id");
+    const response = await http.get(`${BASE_URL}/${idStatus}`);
+    _setData(response[0]);
+  };
+
+  const _createRow = (item = {}, itemId = "") => {
+    const $row = document.createElement("tr");
+    for (const key in item) {
+      const value = item[key];
+      const $td = document.createElement("td");
+      $td.innerText = value;
+      $row.appendChild($td);
+    }
+    $row.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
+    $row.appendChild(_createBtnAction(item[itemId], "Eliminar"));
+    return $row;
+  };
+
+  const _createBtnAction = (itemId = 0, labelBtn = "", _actionFuntion = () => {}) => {
+    const $btn = document.createElement("button");
+    $btn.innerText = labelBtn;
+    $btn.className += "waves-effect waves-light btn red";
+    $btn.setAttribute("item-id", itemId);
+    $btn.addEventListener("click", _actionFuntion);
+    return $btn;
+  };
+
+  const _setData = (item = {}) => {
+    const $inputStatus = document.getElementById("status");
+    const $inputDescription = document.getElementById("description");
+    const { idStatus, description, status } = item;
+    $inputDescription.value = description;
+    $inputStatus.value = status;
+  };
+
+  const _initElements = () => {
+    _getData();
+  };
+
+  return {
+    init: () => {
+      _initElements();
+    },
+  };
+})();
+
+main.init();

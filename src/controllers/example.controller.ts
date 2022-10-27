@@ -26,14 +26,6 @@ export async function deleteExample(req: Request, res: Response) {
   res.redirect("/api/v1/example/view/form");
 }
 
-export async function getData(req: Request, res: Response) {
-  const records = await ExampleModel.findAll({raw:true});
-  res.status(200).json(records);
-}
-
-
-
-
 export async function viewFormExample(req:Request,res:Response){
   const records = await ExampleModel.findAll({raw:true});
   const data = {httpCode:0,message:"",records};
