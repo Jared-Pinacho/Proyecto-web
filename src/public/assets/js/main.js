@@ -3,6 +3,7 @@ const main = (() => {
   const BASE_URL = "http://localhost:4000/api/v2/example";
 
   const _getData = async () => {
+    debugger;
     const response = await http.get(BASE_URL);
     for (let index = 0; index < response.length; index++) {
       const $row = _createRow(response[index], "idStatus");
@@ -11,6 +12,8 @@ const main = (() => {
   };
 
   const _actionButtonEditar = async (event) => {
+    const $formStatus = document.getElementById("formStatus");
+    $formStatus.setAttribute("method","PUT");
     const $btn = event.target;
     const idStatus = $btn.getAttribute("item-id");
     const response = await http.get(`${BASE_URL}/${idStatus}`);
@@ -18,6 +21,7 @@ const main = (() => {
   };
 
   const _createRow = (item = {}, itemId = "") => {
+    debugger;
     const $row = document.createElement("tr");
     for (const key in item) {
       const value = item[key];
@@ -31,6 +35,7 @@ const main = (() => {
   };
 
   const _createBtnAction = (itemId = 0, labelBtn = "", _actionFuntion = () => {}) => {
+    debugger;
     const $btn = document.createElement("button");
     $btn.innerText = labelBtn;
     $btn.className += "waves-effect waves-light btn red";

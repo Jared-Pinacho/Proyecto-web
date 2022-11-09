@@ -12,5 +12,12 @@ const http = (() => {
     return bodyResponse;
   };
 
-  return { get: _get, post:_post };
+  const _put = async (data = { url: "", body: {} }) => {
+    const {url,body} = data;
+    const response = await fetch(url, { method: "PUT" ,body});
+    const bodyResponse = await response.json();
+    return bodyResponse;
+  };
+
+  return { get: _get, post:_post,put:_put };
 })();

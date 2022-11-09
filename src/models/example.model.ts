@@ -1,5 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
+import { PayModel } from "./pay.model";
 import ExampleType from "../types/example.type";
 
 
@@ -27,3 +28,8 @@ ExampleModel.init(
     tableName: "example",
   }
 );
+
+ExampleModel.hasMany(PayModel, {
+  foreignKey: "idStatus",
+  sourceKey: "idStatus",
+});
