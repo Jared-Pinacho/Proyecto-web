@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <link rel="shortcut icon" href="../assets/icons/libro-abierto.png">-->
+    <!-- Materialize CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- Main CSS -->
+    <%- include("comunes/components/headers-component") -%>
+    <!-- Google Icon Font -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <title>Proyecto Web</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="div-header"></div>
+        <div class="div-header2">
+            <form action="/registro">
+                <input type="submit" value="Registrate" class="btn-register">
+            </form>
+        </div>
+    </header>
+
+    <div class="div-txt">
+        <img src="../assets/img/login-txt-en.png" alt="">
+    </div>
+
+    <div class="container-login">
+        <div class="div-pogo">
+            <img src="../assets/img/pogo.png">
+
+        </div>
+        <div class="div-login">
+            <form action="/src/routes/registro.route.ts" class="form-login">
+                <label for="">Iniciar sesion</label>
+                <label for="">Usuario</label>
+
+                <input class=input-login type="text">
+                <label for="">Contraseña</label>
+                <input class=input-login type="text">
+                <input type="submit"  value="Entrar" class="btn-register">
+            </form>
+        </div>
+    </div>
+
+    <!-- Borrar [test] -->
+    <div class="div-bottom">
+        <img src="../assets/img/dino-gif.gif" alt="" id="dino">
+    </div>
+    <!-- [test] -->
+    
+    </div>
+    <!-- Materialize JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <!-- Main JS -->
+    <!-- <script src="main.js"></script> -->
+
+</body>
+
+</html>
