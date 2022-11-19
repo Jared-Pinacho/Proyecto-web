@@ -16,7 +16,7 @@ const app: Application = express();
 
 //settings
 app.set("port", process.env.PORT || 4000);
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, './views'));
 
 
@@ -24,9 +24,9 @@ app.set('views', path.join(__dirname, './views'));
 //middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 //app.use(express.static(path.join(__dirname,'./public')))
-app.use(express.static(path.join(__dirname,'./public')));
+app.use(express.static(path.join(__dirname, './public')));
 
 
 //routes
@@ -39,15 +39,15 @@ app.use("/view/loggin",logginRouter);*/
 app.use(turoresRoutes)
 
 
-app.get("/registro",(req,res)=> {
+app.get("/registro", (req, res) => {
     res.render("registro-view");
 })
 
-app.get("/",(req,res)=> {
+app.get("/", (req, res) => {
     res.render("inicio-view");
 })
 
-app.get("/nivel",(req,res)=> {
+app.get("/nivel", (req, res) => {
     res.render("nivel-view");
 })
 
