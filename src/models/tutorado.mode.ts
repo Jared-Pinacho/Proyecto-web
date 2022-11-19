@@ -40,6 +40,7 @@ TutoradoModel.init(
         status: {
             type: DataTypes.BOOLEAN,
             allowNull: false,       
+            defaultValue:true,
       },
   },
   {

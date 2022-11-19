@@ -1,6 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
 import TutorType from "../types/tutor.type";
+import { TutoradoModel } from "./tutorado.mode";
 
 
 export class TutorModel extends Model<TutorType> {}
@@ -17,10 +18,6 @@ TutorModel.init(
       type: DataTypes.STRING(15),
       allowNull: false,
     },
-    apellido: {
-        type: DataTypes.STRING(15),
-        allowNull: false,
-      },
     email: {
       type: DataTypes.STRING(20),
       allowNull: false,
@@ -35,7 +32,8 @@ TutorModel.init(
       },
         status: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,       
+            allowNull: false,   
+            defaultValue:true,    
       },
   },
   {
@@ -44,9 +42,7 @@ TutorModel.init(
   }
 );
 
-
-/*
-ExampleModel.hasMany(PayModel, {
-  foreignKey: "idStatus",
-  sourceKey: "idStatus",
-});*/
+TutorModel.hasMany(TutoradoModel, {
+  foreignKey: "idTutor",
+  sourceKey: "idTutor",
+});

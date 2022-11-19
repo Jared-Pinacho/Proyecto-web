@@ -3,7 +3,7 @@
 
 <head>
     
-    <link rel="shortcut icon" href="../assets/icons/libro-abierto.png">-->
+    <link rel="shortcut icon" href="../assets/icons/libro-abierto.png">
     <!-- Materialize CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <!-- Main CSS -->
@@ -17,7 +17,7 @@
 
 
     <header>
-        <div class="div-header"></div>
+       
         <div class="div-header2">
             <form action="/registro">
                 <input type="submit" value="Registrate" class="btn-register">
@@ -35,12 +35,15 @@
 
         </div>
         <div class="div-login">
-            <form action="/src/routes/registro.route.ts" class="form-login">
-                <label for="">Iniciar sesion</label>
-                <label for="">Usuario</label>
+            <form action="/nivel" class="form-login">
+                <label class=div-txt-register for="">Iniciar sesion</label>
+              <div>
+                <label  class=div-txt-log for="">Usuario</label>
 
-                <input class=input-login type="text">
-                <label for="">Contraseña</label>
+                <input id="usuario" class=input-login type="text">
+              </div>
+              
+                <label class=div-txt-log for="">Contraseña</label>
                 <input class=input-login type="text">
                 <input type="submit"  value="Entrar" class="btn-register">
             </form>

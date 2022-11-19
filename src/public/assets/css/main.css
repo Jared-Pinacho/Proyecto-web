@@ -30,10 +30,27 @@ header {
     border-radius: 20px;
     color: white;
     cursor: pointer;
-    margin-top: 0.3rem;
+    margin-top: 3rem;
+   
+    padding-bottom: 3rem;
     margin-right: 1rem;
     padding: 0.5rem;
 }
+.btn-registro {
+    background-color: red;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 14%;
+    padding-bottom: 3rem;
+    margin-left: 43%;
+    padding: 0.5rem;
+}
+
+
+
 
 .btn-entrar {
     background-color: red;
@@ -46,6 +63,7 @@ header {
     padding: 0.5rem;
     width: 50%;
     font-size: 20px;
+    
     
 }
 
@@ -82,9 +100,9 @@ header {
     
     align-self: center;
     padding-top: 2 rem;
-    margin-left: 45%;
-    color: white;
-    font-size: 20px; 
+    padding-bottom: 2rem;
+    color:black;
+    font-size: 22px; 
     padding: 0.7rem;
 }
 
@@ -93,10 +111,16 @@ header {
     
     padding-top: 0.5 rem;
    
-    color: white;
-    font-size: 15px; 
+    color: blue;
+    font-size: 19px; 
+}
+
+.div-txt-logo {
+    
+    padding-top: 0.1 rem;
    
-  
+    color: blue;
+    font-size: 19px; 
 }
 
 .container-login {
@@ -110,14 +134,15 @@ header {
 }
 
 .container-register {
-    background-color: #4254f0;
+    background-color: #8bf5e7;
     margin-top: 4rem;
-    margin-left: 40%;
-  
-    display: flex;
+ margin-left: 37%;
+ place-content: center;
+ 
+  display: flex;
     border-radius: 20px;
-    height:280px;
-    width:300px;
+    height:360px;
+    width:370px;
     /* align-content: center; */
 }
 
