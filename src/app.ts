@@ -3,6 +3,8 @@ import path from 'path'
 import dotenv from "dotenv";
 dotenv.config();
 
+import tutorRouter from "./routes/tutor.route";
+import preguntaRouter from "./routes/pregunta.route";
 
 const app = express()
 
@@ -17,5 +19,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,'./public')))
 
 //routes
+app.use('/tutor', tutorRouter) 
+app.use('/pregunta', preguntaRouter) 
 
 export default app
