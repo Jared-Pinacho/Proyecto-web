@@ -1,0 +1,128 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    /*background: linear-gradient(115deg, rgba(101,151,209,0.8),rgba(202,102,211,0.5)),url(/quizbg.jpg);*/
+    background: #00e8ce;
+    ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  #titulo {
+    text-align: center;
+    padding: 0.8rem 0;
+    font-size: 3rem;
+    color: red;
+    /*background: rgba(105,224,90,0.55);*/
+    background: #00e8ce;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .preguntas {
+    margin: 3rem auto;
+    width: 90vw;
+    padding: 2rem;
+    /*background: rgba(0,255,221,0.45);*/
+    background: yellow;
+    cursor: default;
+    border-radius: 1rem;
+  }
+
+  #pregunta {
+    margin-bottom: 1rem;
+  }
+
+  .opcion {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    border-bottom: solid 0.1rem blue;
+    width: 15rem;
+    background: lightblue;
+    border-radius: 1rem;
+  }
+
+  .opcion:hover {
+    color: white;
+  }
+
+  ol {
+    position: relative;
+    padding: 0 1.5rem;
+    color: blue;
+  }
+
+  span {
+    display: block;
+    padding: 0.1rem 0.7rem;
+    border-radius: 1rem;
+  }
+
+  #respuesta {
+    margin-top: 2.5rem;
+  }
+
+  #stat {
+    margin-top: 1.5rem;
+    color: black;
+  }
+
+  .botones {
+    text-align: center;
+  }
+
+  button {
+    padding: 0.2rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+    color: white;
+    background: red;
+  }
+
+  button:active {
+    background: lavender;
+  }
+
+  #barraResultados,
+  #bancoDeRespuestas {
+    width: 20rem;
+    background: rgba(230, 230, 250, 0.77);
+    padding: 2rem;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 5rem;
+    display: none;
+  }
+
+  #puntuacion-titulo {
+    margin: 1rem 0;
+  }
+
+  #boton-puntuacion,
+  #verificar-Respuestas {
+    margin-top: 1rem;
+  }
+
+  #puntuacion {
+    font-size: 2.5rem;
+  }
+
+  #bancoRespuestas li {
+    text-align: left;
+    margin-bottom: 0.2rem;
+    font-size: larger;
+  }
+
+  #respuestas {
+    margin-top: 1rem;
+  }

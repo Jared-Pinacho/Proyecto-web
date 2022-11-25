@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lecciones</title>
+  <link rel="stylesheet" href="/assets/css/preguta-view.css">
+</head>
+
+<body>
+  <h1 id="titulo">Beginner Lesson</h1>
+
+  <!-- contenedor de la lecccion-->
+  <div id="leccion-contenedor">
+    <!-- contenedor de la lecccion-->
+    <div class="preguntas">
+      <h2 id="pregunta"></h2>
+      <ol type="A">
+        <li class="opcion"><span id="opcion0" onclick="calcularPuntuacion(this)"> </span></li>
+        <li class="opcion"><span id="opcion1" onclick="calcularPuntuacion(this)"> </span></li>
+        <li class="opcion"><span id="opcion2" onclick="calcularPuntuacion(this)"> </span></li>
+        <li class="opcion"><span id="opcion3" onclick="calcularPuntuacion(this)"> </span></li>
+      </ol>
+      <h4 id="stat"></h4>
+    </div>
+
+    <div class="botones">
+      <button type="button" class="siguiente" hidden> Next </button>
+    </div>
+
+  </div>
+
+  <!-- barra de resultados-->
+  <div id="barraResultados">
+    <img src="" alt="">
+    <h2 id="puntuacion-titulo">Your score</h2>
+    <h2 id="puntuacion"></h2>
+    <button type="button" id="boton-puntuacion" onclick="volverALeccion()"> Back to lesson</button>
+    <button type="button" id="verificar-Respuestas" onclick="verificarRespuestas()"> Check answers </button>
+  </div>
+
+  <!-- seccion de respuestas-->
+  <div id="bancoDeRespuestas">
+    <h2>Respuestas :</h2>
+    <ol type="1" id="respuestas">
+
+    </ol>
+    <button type="button" id="boton-puntuacion" onclick="volverALeccion()"> Volver a la leccion </button>
+  </div>
+
+  <table>
+    <tbody id="datatable" hidden>
+      <% for(var i=0; i<records.length ;i++){ %>
+        <tr>
+          <td>
+            <%=records[i]["pregunta"] %>
+          </td>
+          <td>
+            <%=records[i]["opcion1"] %>
+          </td>
+          <td>
+            <%=records[i]["opcion2"] %>
+          </td>
+          <td>
+            <%=records[i]["opcion3"] %>
+          </td>
+          <td>
+            <%=records[i]["opcion4"] %>
+          </td>
+          <td>
+            <%=records[i]["respuesta"] %>
+          </td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
+
+  <script src="/assets/js/pregunta-view.js"></script>
+</body>
+
+</html>

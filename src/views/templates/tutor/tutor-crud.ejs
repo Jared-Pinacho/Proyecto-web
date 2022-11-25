@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+</head>
+
+<body>
+    <!-- Form EJS -->
+    <form id="formTutor" action="/tutor/crud" method="post">
+        <input type="text" name="nombre" id="usuario">
+        <input type="text" name="username" id="username">
+        <input type="email" name="email" id="email">
+        <input type="password" name="password" id="password">
+        <button type="submit" id="btnGuardar" class="waves-effect waves-light btn">Guardar</button>
+    </form>
+
+    <!-- Table EJS -->
+    <table>
+        <thead>
+            <th>
+                <tr>
+                    <td>#</td>
+                    <td>Nombre</td>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Password</td>
+                    <td>Acciones</td>
+                </tr>
+            </th>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<records.length ;i++){ %>
+                <tr>
+                    <td>
+                        <%=records[i]["idTutor"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["nombre"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["username"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["email"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["password"] %>
+                    </td>
+                    <td>
+                        <a class="waves-effect waves-light btn" href="/tutor/view/edit/<%=records[i][" idTutor"] %>
+                            ">Editar</a>
+                        <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <% if(records.length !=0){%>
+        <h1>Bienvenido <%=records[0]["username"] %>
+        </h1>
+        <% } %>
+</body>
+
+</html>

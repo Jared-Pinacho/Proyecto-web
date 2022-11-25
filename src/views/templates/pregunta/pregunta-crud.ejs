@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+</head>
+
+<body>
+    <!-- Form EJS -->
+    <form id="formTutor" action="/pregunta/crud" method="post">
+        <input type="text" name="pregunta" id="pregunta">
+        <input type="text" name="opcion1" id="opcion1">
+        <input type="text" name="opcion2" id="opcion2">
+        <input type="text" name="opcion3" id="opcion3">
+        <input type="text" name="opcion4" id="opcion4">
+        <input type="text" name="respuesta" id="respuesta">
+        <button type="submit" id="btnGuardar" class="waves-effect waves-light btn">Guardar</button>
+    </form>
+
+    <!-- Table EJS -->
+    <table>
+        <thead>
+            <th>
+                <tr>
+                    <td>#</td>
+                    <td>Pregunta</td>
+                    <td>Opcion 1</td>
+                    <td>Opcion 2</td>
+                    <td>Opcion 3</td>
+                    <td>Opcion 4</td>
+                    <td>Respuesta</td>
+                    <td>Acciones</td>
+                </tr>
+            </th>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<records.length ;i++){ %>
+                <tr>
+                    <td>
+                        <%=records[i]["idPregunta"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["pregunta"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["opcion1"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["opcion2"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["opcion3"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["opcion4"] %>
+                    </td>
+                    <td>
+                        <%=records[i]["respuesta"] %>
+                    </td>
+                    <td>
+                        <a class="waves-effect waves-light btn" href="/tutor/view/edit/<%=records[i]["idTutor"]  %> ">Editar</a>
+                        <a class="waves-effect waves-light btn" href="/tutor/view/delete/<%=records[i]["idTutor"]  %>">Eliminar</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <!-- Script JS -->
+    <script>
+
+    </script>
+</body>
+
+</html>
