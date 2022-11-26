@@ -8,6 +8,14 @@ export const TablaTutorado = sequelize.define('tutorado', {
         primaryKey: true,
         autoIncrement: true
     },
+    idTutor: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    codigo: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     nombre: {
         type: DataTypes.STRING,
         allowNull: false
