@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
 import TutorType from "../types/tutor.type";
-import { TutoradoModel } from "./tutorado.mode";
+import { TutoradoModel } from "./tutorado.model";
 
 
 export class TutorModel extends Model<TutorType> {}
@@ -30,11 +30,7 @@ TutorModel.init(
         type: DataTypes.STRING(10),
         allowNull: false,
       },
-        status: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,   
-            defaultValue:true,    
-      },
+       
   },
   {
     sequelize,
@@ -46,3 +42,5 @@ TutorModel.hasMany(TutoradoModel, {
   foreignKey: "idTutor",
   sourceKey: "idTutor",
 });
+
+

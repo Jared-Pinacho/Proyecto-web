@@ -4,5 +4,4 @@ export default interface TutorType {
     email?: string;
     username?:string;
     password?:string;
-    status?: boolean;
   }

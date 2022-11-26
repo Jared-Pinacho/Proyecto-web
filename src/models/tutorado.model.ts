@@ -33,15 +33,7 @@ TutoradoModel.init(
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      nivel: {
-        type: DataTypes.STRING(15),
-        allowNull: false,
-      },
-        status: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,       
-            defaultValue:true,
-      },
+      
   },
   {
     sequelize,
