@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { TablaTutorado } from "../models/tutorado.model";
 
+//VISTAS
 export async function viewTutoradoNivel(req: Request, res: Response) {
     try {
       const records = await TablaTutorado.findAll({ raw: true })
@@ -23,6 +24,8 @@ export async function viewCrudTutorado(req: Request, res: Response) {
   }
 }
 
+
+//CRUD
 export async function getTutorado(req: Request, res: Response) {
   try {
     const {idTutorado} = req.params
@@ -38,10 +41,10 @@ export async function getTutorado(req: Request, res: Response) {
 }
 
 export async function createTutorado(req: Request, res: Response) {
-  const { nombre, edad, sexo } = req.body
+  const { idTutor, codigo, nombre, edad, sexo } = req.body
 
   try {
-    const nuevoTutorado = await TablaTutorado.create({ nombre, edad, sexo })
+    const nuevoTutorado = await TablaTutorado.create({ idTutor, codigo, nombre, edad, sexo })
     // res.status(201).json(nuevoTutorado)
     viewCrudTutorado(req, res)
   } catch (error) {
