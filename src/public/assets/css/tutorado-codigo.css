@@ -1,5 +1,5 @@
 body {
-    background-color: #8bf5e7;
+    background-color: #e694ce;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
@@ -9,22 +9,20 @@ header {
     display: flex;
     flex-direction: column;
 }
-/* header #00e8ce */
-/* body #8bf5e7 */
-/*  noc #58EFDC*/
+/* #ffe5ff */
 .div-header {
-    background-color: #36b7ec;
+    background-color: #ad6098;
     height: 1rem;
 }
 
 .div-header2 {
-    background-color: #4ed8ed;
+    background-color: #ffe5ff;
     height: 2.5rem;
     text-align: right;
 }
 
 .btn-register {
-    background-color: #36b7ec;
+    background-color: #ad6098;
     border: none;
     border-radius: 20px;
     color: white;
@@ -40,7 +38,7 @@ header {
 }
 
 .container-login {
-    background-color: #58EFDC;
+    background-color: #ffe5ff ;
     margin-top: 4rem;
     margin-left: 30%;
     margin-right: 30%;
@@ -65,11 +63,11 @@ label {
     font-size: 1rem;
     line-height: 1.5rem;
     -webkit-text-stroke: 0.1px black;
-    color:  #36b7ec;
+    color:  #ad6098;
 }
 
 input[type=text] {
-    background-color: #8bf5e7;
+    background-color: #e694ce;
     border: none;
     color: white;
     border-radius: 20px;

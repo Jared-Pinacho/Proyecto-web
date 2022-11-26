@@ -22,7 +22,7 @@ header {
 }
 
 .btn-register {
-    background-color: red;
+    background-color: #FFC75F;
     border: none;
     border-radius: 20px;
     color: white;
@@ -63,7 +63,7 @@ label {
     font-size: 1rem;
     line-height: 1.5rem;
     -webkit-text-stroke: 0.1px black;
-    color:  #F9F871;
+    color:  #FFC75F;
 }
 
 input[type=text] {
