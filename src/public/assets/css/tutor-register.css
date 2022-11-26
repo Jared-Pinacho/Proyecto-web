@@ -1,5 +1,5 @@
 body {
-    background-color: #00e8ce;
+    background-color: #F9F871;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
@@ -11,12 +11,12 @@ header {
 }
 
 .div-header {
-    background-color: #8bf5e7;
+    background-color: #FFC75F;
     height: 1rem;
 }
 
 .div-header2 {
-    background-color: #58EFDC;
+    background-color: #F2FEDC;
     height: 2.5rem;
     text-align: right;
 }
@@ -38,7 +38,7 @@ header {
 }
 
 .container-login {
-    background-color: #8bf5e7;
+    background-color: #F2FEDC;
     margin-top: 4rem;
     margin-left: 30%;
     margin-right: 30%;
@@ -63,25 +63,25 @@ label {
     font-size: 1rem;
     line-height: 1.5rem;
     -webkit-text-stroke: 0.1px black;
-    color:  #00E8CE;
+    color:  #F9F871;
 }
 
 input[type=text] {
-    background-color: #00e8ce;
+    background-color: #F9F871;
     border: none;
     color: white;
     border-radius: 20px;
 }
 
 input[type=email] {
-    background-color: #00e8ce;
+    background-color: #F9F871;
     border: none;
     color: white;
     border-radius: 20px;
 }
 
 input[type=password] {
-    background-color: #00e8ce;
+    background-color: #F9F871;
     border: none;
     color: white;
     border-radius: 20px;
