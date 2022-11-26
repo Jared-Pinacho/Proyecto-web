@@ -2,18 +2,29 @@ import { Request, Response } from "express";
 import { TablaTutorado } from "../models/tutorado.model";
 
 //VISTAS
-export async function viewTutoradoNivel(req: Request, res: Response) {
-    try {
-      const records = await TablaTutorado.findAll({ raw: true })
-      const data = { httpCode: 0, message: "", records }
-      res.render("templates/tutorado/tutorado-nivel", data)
-      // res.status(201).json(records)
-    } catch (error) {
-      console.log(error)
-    }
+export async function viewTutoradoCodigo(req: Request, res: Response) {
+  try {
+    const records = await TablaTutorado.findAll({ raw: true })
+    const data = { httpCode: 0, message: "", records }
+    res.render("templates/tutorado/tutorado-codigo", data)
+    // res.status(201).json(records)
+  } catch (error) {
+    console.log(error)
   }
+}
 
-export async function viewCrudTutorado(req: Request, res: Response) {
+export async function viewTutoradoNivel(req: Request, res: Response) {
+  try {
+    const records = await TablaTutorado.findAll({ raw: true })
+    const data = { httpCode: 0, message: "", records }
+    res.render("templates/tutorado/tutorado-nivel", data)
+    // res.status(201).json(records)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function viewTutoradoCrud(req: Request, res: Response) {
   try {
     const records = await TablaTutorado.findAll({ raw: true })
     const data = { httpCode: 0, message: "", records }
@@ -28,7 +39,7 @@ export async function viewCrudTutorado(req: Request, res: Response) {
 //CRUD
 export async function getTutorado(req: Request, res: Response) {
   try {
-    const {idTutorado} = req.params
+    const { idTutorado } = req.params
     const tutorado = await TablaTutorado.findOne({
       where: {
         idTutorado
@@ -46,7 +57,7 @@ export async function createTutorado(req: Request, res: Response) {
   try {
     const nuevoTutorado = await TablaTutorado.create({ idTutor, codigo, nombre, edad, sexo })
     // res.status(201).json(nuevoTutorado)
-    viewCrudTutorado(req, res)
+    viewTutoradoCrud(req, res)
   } catch (error) {
     console.log(error)
   }

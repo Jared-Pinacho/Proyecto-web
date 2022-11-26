@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { createTutorado, deleteTutorado, updateTutorado, viewCrudTutorado, getTutorado, viewTutoradoNivel } from "../controllers/tutorado.controller";
+import { createTutorado, deleteTutorado, updateTutorado, viewTutoradoCrud, getTutorado, viewTutoradoNivel, viewTutoradoCodigo } from "../controllers/tutorado.controller";
 const router = Router()
 
 //routes /tutorado
-router.get('/crud', viewCrudTutorado)
+router.get('/codigo', viewTutoradoCodigo)
+router.get('/crud', viewTutoradoCrud)
 router.get('/nivel/:idTutorado', viewTutoradoNivel)
 
 //CRUD
