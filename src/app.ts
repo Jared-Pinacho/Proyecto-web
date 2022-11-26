@@ -5,6 +5,7 @@ dotenv.config();
 
 import tutorRouter from "./routes/tutor.route";
 import preguntaRouter from "./routes/pregunta.route";
+import tutoradoRouter from "./routes/tutorado.route";
 
 const app = express()
 
@@ -21,5 +22,6 @@ app.use(express.static(path.join(__dirname,'./public')))
 //routes
 app.use('/tutor', tutorRouter) 
 app.use('/pregunta', preguntaRouter) 
+app.use('/tutorado', tutoradoRouter) 
 
 export default app

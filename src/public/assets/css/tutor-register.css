@@ -1,0 +1,93 @@
+body {
+    background-color: #00e8ce;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-header {
+    background-color: #8bf5e7;
+    height: 1rem;
+}
+
+.div-header2 {
+    background-color: #58EFDC;
+    height: 2.5rem;
+    text-align: right;
+}
+
+.btn-register {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 0.3rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+}
+
+.div-txt {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.container-login {
+    background-color: #8bf5e7;
+    margin-top: 4rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    border-radius: 20px;
+    /* align-content: center; */
+}
+
+.div-pogo {
+    margin: auto;
+}
+
+.div-login {
+    margin: auto;
+
+}
+
+label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    -webkit-text-stroke: 0.1px black;
+    color:  #00E8CE;
+}
+
+input[type=text] {
+    background-color: #00e8ce;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
+input[type=email] {
+    background-color: #00e8ce;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
+input[type=password] {
+    background-color: #00e8ce;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+}

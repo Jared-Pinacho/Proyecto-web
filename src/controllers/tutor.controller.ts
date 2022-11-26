@@ -1,6 +1,29 @@
 import { Request, Response } from "express";
 import { TablaTutor } from "../models/tutor.model";
 
+//VISTAS
+export async function viewTutorLogin(req: Request, res: Response) {
+  try {
+    const records = await TablaTutor.findAll({ raw: true })
+    const data = { httpCode: 0, message: "", records }
+    res.render("templates/tutor/tutor-login", data)
+    // res.status(201).json(records)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function viewTutorRegister(req: Request, res: Response) {
+  try {
+    const records = await TablaTutor.findAll({ raw: true })
+    const data = { httpCode: 0, message: "", records }
+    res.render("templates/tutor/tutor-register", data)
+    // res.status(201).json(records)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export async function viewCrudTutor(req: Request, res: Response) {
   try {
     const records = await TablaTutor.findAll({ raw: true })
@@ -12,6 +35,7 @@ export async function viewCrudTutor(req: Request, res: Response) {
   }
 }
 
+//CRUD
 export async function getTutor(req: Request, res: Response) {
   try {
     const {idTutor} = req.params
@@ -65,7 +89,3 @@ export async function deleteTutor(req: Request, res: Response) {
     console.log(error);
   }
 }
-
-
-// const {usuario,email,telefono,contraseña} = req.body
-//   await TablaTutor.create({usuario,email,telefono,contraseña});

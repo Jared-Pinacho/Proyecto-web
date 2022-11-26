@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { createTutor, deleteTutor, updateTutor, viewCrudTutor, getTutor } from "../controllers/tutor.controller";
+import { createTutor, deleteTutor, updateTutor, viewCrudTutor, getTutor, viewTutorLogin, viewTutorRegister } from "../controllers/tutor.controller";
 const router = Router()
 
 //routes /tutor
+router.get('/login', viewTutorLogin)
+router.get('/register', viewTutorRegister)
 router.get('/crud', viewCrudTutor)
 
 //CRUD
