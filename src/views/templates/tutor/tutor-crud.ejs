@@ -35,7 +35,7 @@
                 </tr>
             </th>
         </thead>
-        <tbody>
+        <tbody id="bodyTutor">
             <% for(var i=0; i<records.length ;i++){ %>
                 <tr>
                     <td>
@@ -54,19 +54,15 @@
                         <%=records[i]["password"] %>
                     </td>
                     <td>
-                        <a class="waves-effect waves-light btn" href="/tutor/view/edit/<%=records[i][" idTutor"] %>
-                            ">Editar</a>
-                        <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                        <a class="waves-effect waves-light btn" itemid="<%= records[i]["idTutor"] %>" id="btnEdit">Editar</a>
+                        <a class="waves-effect waves-light btn" itemid="<%= records[i]["idTutor"] %>" id="btnDelete">Eliminar</a>
                     </td>
                 </tr>
                 <% } %>
         </tbody>
     </table>
-
-    <% if(records.length !=0){%>
-        <h1>Bienvenido <%=records[0]["username"] %>
-        </h1>
-        <% } %>
+        <script src="/assets/js/http.js"></script>
+        <script src="/assets/js/tutor-crud.js"></script>
 </body>
 
 </html>
