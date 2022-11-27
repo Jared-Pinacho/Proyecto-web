@@ -63,28 +63,23 @@ export async function createTutor(req: Request, res: Response) {
 
 }
 
-// falta hacer boton para edit y delete
 export async function updateTutor(req: Request, res: Response) {
-  try {
-    const { idTutor } = req.params;
-    const { body } = req;
-    const tutorId = await TablaTutor.findByPk(idTutor);
-    res.json(tutorId);
-    await tutorId?.update(body);
-    res.status(201).json(tutorId?.toJSON());
-    // viewTableTutor(req,res)
-
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   const { idTutor } = req.params
+  //   const { body } = req
+  //   const tutorId = await TablaTutor.findByPk(idTutor)
+  //   await tutorId?.update(body)
+  // } catch (error) {
+  //   console.log(error);
+  // }
 }
 
 export async function deleteTutor(req: Request, res: Response) {
   try {
     const { idTutor } = req.params;
     const entity = await TablaTutor.findByPk(idTutor);
-    await entity?.destroy();
-    res.status(204)
+    await entity?.destroy()
+    viewCrudTutor(req, res)
   } catch (error) {
     console.log(error);
   }
