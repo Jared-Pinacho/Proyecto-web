@@ -251,3 +251,25 @@ label {
     flex-direction: column;
 }
 
+
+.table_ubi{
+    margin-top: 5rem;
+}
+
+
+.btn-agrega {
+    background-color: red;
+    border: 5%;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 0.1%;
+    margin-top: 0.1%;
+    margin-left: 0%;
+    padding: 0.5rem;
+    width: 80%;
+    height:80% ;
+    font-size: 13px;
+    
+    
+}

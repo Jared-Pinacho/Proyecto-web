@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="../assets/icons/libro-abierto.png">
    <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Materialize CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <!-- Main CSS -->
@@ -19,36 +19,62 @@
 
 
 <body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+        <li><a href="sass.html">Cuenta</a></li>
+        <li><a href="badges.html">Ajustes</a></li>
+        <li><a href="collapsible.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  
+
+
 <div class="container">
 
-<table id="tabla"  class="table table-bordered table-striped text-center mt-4">
-  <thead>
-  <tr class="big-primary text-black">
-<th scope="col">nombre</th>
-<th scope="col">edad</th>
-<th scope="col">sexo</th>
-<th scope="col">Aciertos</th>
-<th scope="col">acciones</th>
-</tr>
-</thead>
-<tbody>
+
+<table id="tabla" class="table_ubi" class="table table-bordered table-striped text-center mt-4">
+
   
+ 
+  <tr class="big-primary text-black">
+<th >Nombre</th>
+<th >EDAD</th>
+<th >SEXO</th>
+<th >ACIERTO</th>
+<th >ACCIONES</th>
+<th>
+
+    <form action="/actualiza">
+      <input type="submit" value="Agregar" class="btn-agrega">
+    </form>
+   
+
+</th>
+</tr>
+
+
+
+ 
 <tr>
 
   <script src="../assets/js/registro.js"></script>
   
- 
 </tr>
-
-
-
-</tbody>
 
   </table>
 </div>
- 
- 
 
+ 
+<script src="../assets/js/delete.js"></script>
 
 </body>
 
