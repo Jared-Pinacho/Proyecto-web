@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { TablaTutor } from "../models/tutor.model";
 
 //VISTAS
+
 export async function viewTutorLogin(req: Request, res: Response) {
   try {
     const records = await TablaTutor.findAll({ raw: true })

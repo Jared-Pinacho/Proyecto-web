@@ -7,10 +7,10 @@ export const TablaPregunta = sequelize.define('pregunta', {
         primaryKey: true,
         autoIncrement: true
     },
-    idLeccion: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
+    // idLeccion: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false
+    // },
     pregunta: {
         type: DataTypes.STRING,
         allowNull: false

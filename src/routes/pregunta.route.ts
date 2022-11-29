@@ -1,9 +1,8 @@
 import { Router } from "express";
-import { createPregunta, viewCrudPregunta, viewPregunta } from "../controllers/pregunta.controller";
+import { createPregunta, viewPregunta } from "../controllers/pregunta.controller";
 const router = Router()
 
 //routes /pregunta
-router.get('/crud', viewCrudPregunta)
 router.get('/view', viewPregunta)
 
 //CRUD

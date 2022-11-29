@@ -8,10 +8,10 @@ export const TablaLeccion = sequelize.define('leccion', {
         primaryKey: true,
         autoIncrement: true
     },
-    idTutorado: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    // idTutorado: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    // },
     dificultad: {
         type: DataTypes.STRING,
         allowNull: false

@@ -1,0 +1,87 @@
+body {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    height: 97.5vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-izq {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5%;
+    width: 50vw;
+    height: 95vh;
+}
+
+.divForm {
+    margin: 1vw;
+    text-align: center;
+}
+
+.divTable {
+    margin: 1vw;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.divTable thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.divTable th,
+.divTable td {
+    padding: 0.5vh 0.8vw;
+}
+
+.div-der {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5%;
+    width: 50vw;
+    height: 95vh;
+    margin-left: 0.5vw;
+
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 2vh 1vw;
+    margin: 1vh 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btnFormPregunta {
+    margin-top: 0.8vh;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btnFormPregunta:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.btnFormPregunta:active {
+    transform: translateY(-1px);
+}
