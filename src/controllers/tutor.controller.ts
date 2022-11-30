@@ -57,7 +57,7 @@ export async function createTutor(req: Request, res: Response) {
   try {
     const nuevoTutor = await TablaTutor.create({ nombre, username, email, password })
     // res.status(201).json(nuevoTutor)
-    viewCrudTutor(req, res)
+    viewTutorRegister(req, res)
   } catch (error) {
     console.log(error)
   }
@@ -80,7 +80,6 @@ export async function deleteTutor(req: Request, res: Response) {
     const { idTutor } = req.params;
     const entity = await TablaTutor.findByPk(idTutor);
     await entity?.destroy()
-    viewCrudTutor(req, res)
   } catch (error) {
     console.log(error);
   }
