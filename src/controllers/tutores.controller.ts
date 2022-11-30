@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { json } from "sequelize";
+import { encrypt } from "../helpers/bcrypt-handle";
 import { TutorModel } from "../models/tutor.model";
 import { TutoradoModel } from "../models/tutorado.model";
 
@@ -33,12 +34,15 @@ export const getTutor = async (req: Request, res: Response) => {
 export const createTutores = async (req: Request, res: Response) => {
     try {
         const { nombre, email, username, password } = req.body;
+        
+        
+        
         const newTutor = await TutorModel.create({
            
             nombre,
             email,
             username,
-            password
+            password:password
         })
         res.json(newTutor)
     } catch (error) {

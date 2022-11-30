@@ -52,8 +52,8 @@ app.get("/registro", (req, res) => {
     res.render("registro-view");
 })
 
-app.get("/actualiza", (req, res) => {
-    res.render("actualiza-view");
+app.get("/inscribe", (req, res) => {
+    res.render("inscribe-view");
 })
 
 app.get("/dash", (req, res) => {

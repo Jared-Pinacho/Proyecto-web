@@ -9,7 +9,7 @@ router.put('/tutores/:idTutor',updateTutores)
 router.delete('/tutores/:idTutor',deleteTutores)
 router.get('/tutores/:idTutor',getTutor)
 
-router.get('/:idTutor/tutorados',getTutorTutorados)
+router.get('/tutores/:idTutor/tutorados',getTutorTutorados)
 
 export default router
 

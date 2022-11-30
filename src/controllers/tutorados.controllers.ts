@@ -18,6 +18,7 @@ export const getTutorados = async (req: Request, res: Response) => {
 export const getTutorado = async (req: Request, res: Response) => {
     try {
         const { idTutorado } = req.params
+        
         const tutorado = await TutoradoModel.findOne({
             where: {
                 idTutorado,

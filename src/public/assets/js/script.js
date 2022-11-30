@@ -12,6 +12,7 @@ $formulario.addEventListener("submit",async (event) => {
 
   let tutorJson = JSON.stringify(tutor);
 
+  
   //console.log(tutorJson)
 
   const datos = {
