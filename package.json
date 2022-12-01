@@ -28,6 +28,7 @@
     "typescript": "^4.7.2"
   },
   "devDependencies": {
+    "@types/connect-flash": "^0.0.37",
     "@types/express-session": "^1.17.5",
     "nodemon": "^2.0.16",
     "rimraf": "^3.0.2",
