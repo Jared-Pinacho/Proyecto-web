@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import dotenv from "dotenv";
 import session from 'express-session';
+import flash from 'connect-flash';
 dotenv.config();
 
 import tutorRouter from "./routes/tutor.route";
@@ -25,6 +26,7 @@ app.use(session({
     resave: false,
     secret: 'secretkey'
 }))
+app.use(flash())
 
 //routes
 app.use('/tutor', tutorRouter) 
