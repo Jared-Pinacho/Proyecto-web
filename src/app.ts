@@ -11,26 +11,33 @@ import tutoradoRouter from "./routes/tutorado.route";
 
 const app = express()
 
-
 //settings
 app.set("port", process.env.PORT || 4000);
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, './views'));
 
 //middlewares
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(express.static(path.join(__dirname,'./public')))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static(path.join(__dirname, './public')))
 app.use(session({
-    saveUninitialized: false,
+    secret: 'secretkey',
     resave: false,
-    secret: 'secretkey'
+    saveUninitialized: false,
+    cookie: { secure: false, httpOnly: false, maxAge: 1000 * 60 * 60 },
 }))
 app.use(flash())
 
+//global variable
+app.use((req, res, next) => {
+    app.locals.logged = req.flash('user')
+    app.locals.idlogged = req.flash('id')
+    next()
+})
+
 //routes
-app.use('/tutor', tutorRouter) 
-app.use('/pregunta', preguntaRouter) 
-app.use('/tutorado', tutoradoRouter) 
+app.use('/tutor', tutorRouter)
+app.use('/pregunta', preguntaRouter)
+app.use('/tutorado', tutoradoRouter)
 
 export default app

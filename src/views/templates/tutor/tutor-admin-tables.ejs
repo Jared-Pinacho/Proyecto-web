@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Admin Tables</title>
+    <link rel="stylesheet" href="/assets/css/tutor-admin.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="div-izq">
+            <div class="divTable">
+                <h2>Hola <%= tutorData['username'] %> </h2>
+                
+            </div>
+
+        </div>
+        <div class="div-der">
+            <div class="divTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Pregunta</td>
+                            <td>Opcion 1</td>
+                            <td>Opcion 2</td>
+                            <td>Opcion 3</td>
+                            <td>Opcion 4</td>
+                            <td>Respuesta</td>
+                            <td>Acciones</td>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyPregunta">
+                        <% for(var i=0; i<records.length ;i++){ %>
+                            <tr>
+                                <td>
+                                    <%=records[i]["pregunta"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["opcion1"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["opcion2"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["opcion3"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["opcion4"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["respuesta"] %>
+                                </td>
+                                <td>
+                                    <a> En proceso</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <!-- <script src="/assets/js/http.js"></script>
+    <script src="/assets/js/tutor-admin.js"></script> -->
+</body>
+
+</html>

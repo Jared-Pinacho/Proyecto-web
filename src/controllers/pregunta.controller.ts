@@ -2,6 +2,12 @@ import { Request, Response } from "express";
 import { TablaPregunta } from "../models/pregunta.model";
 import { TablaTutor } from "../models/tutor.model";
 
+declare module 'express-session' {
+  export interface SessionData {
+    user: string[];
+  }
+}
+
 export async function viewPregunta(req: Request, res: Response) {
   try {
     const records = await TablaPregunta.findAll({ raw: true })
@@ -11,29 +17,46 @@ export async function viewPregunta(req: Request, res: Response) {
   } catch (error) {
     console.log(error)
   }
-  
+}
+
+export async function viewTutorAdminLog(req: Request, res: Response) {
+  try {
+    if (req.session.user) {
+      const tutorData = req.session.user[0]
+      res.render("templates/tutor/tutor-admin-tables", { tutorData })
+    } else {
+      res.send('<strong> You are not logged in </strong>')
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function viewTutorAdmin(req: Request, res: Response) {
   try {
-    const {idTutor, username} = req.params
-    const recordsTutor = await TablaTutor.findOne({
+    const { username, password } = req.body
+    const tutor = await TablaTutor.findOne({
       where: {
-        username
+        username,
+        password
       }
     })
-    const records = await TablaPregunta.findAll({
-      where: {
-        idTutor
-      }
-    })
-
-    const data = { httpCode: 0, message: recordsTutor, records }
-    if (recordsTutor != null) {
-      res.render("templates/tutor/tutor-admin", data)
+    if (tutor) {
+      const records = await TablaPregunta.findAll({
+        where: {
+          idTutor: tutor?.dataValues['idTutor']
+        }
+      })
+      req.flash('user', tutor?.dataValues)
+      req.session.user = req.flash('user')
+      const tutorData = req.session.user[0]
+      const data = { httpCode: 0, tutorData, records}
+      res.render("templates/tutor/tutor-admin-tables", data)
+    } else {
+      res.send('<strong>Username does not exist</strong>')
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
@@ -59,7 +82,3 @@ export async function deletePregunta(req: Request, res: Response) {
     console.log(error);
   }
 }
-
-
-// const {usuario,email,telefono,contraseña} = req.body
-//   await TablaTutor.create({usuario,email,telefono,contraseña});

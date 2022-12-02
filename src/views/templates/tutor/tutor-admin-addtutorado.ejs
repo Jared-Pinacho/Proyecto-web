@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Admin</title>
+    <link rel="stylesheet" href="/assets/css/tutor-admin.css">
+</head>
+
+<body>
+    <div class="container-center">
+        <div class="div-center">
+            <div class="divForm">
+                <form id="formTutor" action="/tutor/admin/addtutorado" method="post">
+                    <input hidden type="text" name="idTutor" id="idTutor">
+                    <input hidden type="text" name="codigo" id="codigo">
+                    <input type="text" class="in" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="number" class="in" name="edad" id="edad" placeholder="Edad">
+                    <input type="text" class="in" name="sexo" id="sexo" placeholder="Sexo">
+                    <button type="submit" id="btnGuardar" class="btnFormPregunta">Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/http.js"></script>
+    <script src="/assets/js/tutor-admin.js"></script>
+</body>
+
+</html>

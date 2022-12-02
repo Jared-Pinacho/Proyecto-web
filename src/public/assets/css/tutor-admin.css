@@ -1,6 +1,13 @@
 body {
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    height: 97.5vh;
+    background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+img {
+    padding: 10px 10px 10px 10px;
+    width: 75%;
+    height: 55%;
 }
 
 .container {
@@ -8,11 +15,25 @@ body {
     flex-direction: row;
 }
 
+.container-center {
+    text-align: center;
+}
+
 .div-izq {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5%;
     width: 50vw;
     height: 95vh;
+}
+
+.div-center {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2vh;
+    padding: 1%;
+    width: 50vw;
+    height: 50vh;
+    margin-left: 25vw;
+    margin-top: 20vh;
 }
 
 .divForm {
@@ -45,7 +66,6 @@ body {
     width: 50vw;
     height: 95vh;
     margin-left: 0.5vw;
-
 }
 
 .in {
