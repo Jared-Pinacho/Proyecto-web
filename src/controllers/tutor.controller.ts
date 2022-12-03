@@ -1,8 +1,9 @@
-import { Request, Response } from "express";
+import { Request, Response, text } from "express";
 import { TablaTutor } from "../models/tutor.model";
+import bcrypt from 'bcrypt'
+import nodemailer from "nodemailer";
 
 //VISTAS
-
 export async function viewTutorLogin(req: Request, res: Response) {
   try {
     const records = await TablaTutor.findAll({ raw: true })
@@ -39,7 +40,7 @@ export async function viewCrudTutor(req: Request, res: Response) {
 //CRUD
 export async function getTutor(req: Request, res: Response) {
   try {
-    const {idTutor} = req.params
+    const { idTutor } = req.params
     const tutor = await TablaTutor.findOne({
       where: {
         idTutor
@@ -52,11 +53,28 @@ export async function getTutor(req: Request, res: Response) {
 }
 
 export async function createTutor(req: Request, res: Response) {
-  const { nombre, username, email, password } = req.body
+  const { nombre, email, username } = req.body
+  const passwordRandom = Math.random().toString(36).slice(-11)
+  let password = await bcrypt.hash(passwordRandom, 8)
+  
 
   try {
-    const nuevoTutor = await TablaTutor.create({ nombre, username, email, password })
-    // res.status(201).json(nuevoTutor)
+    await TablaTutor.create({ nombre, username, email, password })
+    const mailer = nodemailer.createTransport({
+      host: process.env.MAILER_HOST,
+      port: 587,
+      auth: {
+          user: process.env.MAILER_USER,
+          pass: process.env.MAILER_PASSWORD
+      }
+    })
+    
+    await mailer.sendMail({
+      from: "Remitente",
+      to: email,
+      subject: 'Credenciales de Acceso',
+      text: 'Te has registrado a *****\nUser: '+username+'\nPassword: ' +password
+    })
     viewTutorRegister(req, res)
   } catch (error) {
     console.log(error)

@@ -75,6 +75,13 @@ input[type=text] {
     border-radius: 20px;
 }
 
+input[type=password] {
+    background-color: #c2fcf3;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
 .form-login {
     display: flex;
     flex-direction: column;
