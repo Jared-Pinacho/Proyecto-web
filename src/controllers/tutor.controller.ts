@@ -57,7 +57,6 @@ export async function createTutor(req: Request, res: Response) {
   const passwordRandom = Math.random().toString(36).slice(-11)
   let password = await bcrypt.hash(passwordRandom, 8)
   
-
   try {
     await TablaTutor.create({ nombre, username, email, password })
     const mailer = nodemailer.createTransport({
