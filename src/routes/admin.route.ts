@@ -1,9 +1,13 @@
 import { Router } from "express";
-import { createPregunta, deletePregunta, viewTutorAdmin, viewTutorAdminLog } from "../controllers/admin.controller"
+import { createPregunta, createTutorado, deletePregunta, viewAddTutorado, viewTutorAdmin, viewTutorAdminLog } from "../controllers/admin.controller"
 const router = Router()
 
 // routes /admin
 router.post('/', viewTutorAdmin)
+router.get('/addtutorado', viewAddTutorado)
+
+//CRUD TUTORADO
+router.post('/addtutorado', createTutorado)
 
 //CRUD PREGUNTA
 router.get('/', viewTutorAdminLog)

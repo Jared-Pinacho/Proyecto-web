@@ -18,7 +18,6 @@
                     <thead>
                         <th>
                             <tr>
-                                <td>#</td>
                                 <td>Codigo</td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -30,9 +29,6 @@
                     <tbody>
                         <% for(var i=0; i<recordsTutorados.length ;i++){ %>
                             <tr>
-                                <td>
-                                    <%=recordsTutorados[i]["idTutorado"] %>
-                                </td>
                                 <td>
                                     <%=recordsTutorados[i]["codigo"] %>
                                 </td>
@@ -58,9 +54,7 @@
 
             </div>
             <div class="content">
-                <form action="" method="post">
-                    <button class="btnForm" type="submit">Añadir</button>
-                </form>
+                <button class="btnForm" type="submit" onclick="location.href='/admin/addtutorado';">Añadir</button>  
             </div>
         </div>
         <div class="div-der">

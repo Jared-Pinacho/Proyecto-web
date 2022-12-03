@@ -60,21 +60,22 @@ export async function createTutor(req: Request, res: Response) {
   
   try {
     await TablaTutor.create({ nombre, username, email, password })
-    const mailer = nodemailer.createTransport({
-      host: process.env.MAILER_HOST,
-      port: 587,
-      auth: {
-          user: process.env.MAILER_USER,
-          pass: process.env.MAILER_PASSWORD
-      }
-    })
+    // const mailer = nodemailer.createTransport({
+    //   host: process.env.MAILER_HOST,
+    //   port: 587,
+    //   auth: {
+    //       user: process.env.MAILER_USER,
+    //       pass: process.env.MAILER_PASSWORD
+    //   }
+    // })
     
-    await mailer.sendMail({
-      from: "Remitente",
-      to: email,
-      subject: 'Credenciales de Acceso',
-      text: 'Te has registrado a *****\nUser: '+username+'\nPassword: ' +password
-    })
+    // await mailer.sendMail({
+    //   from: "Remitente"
+    ,
+    //   to: email,
+    //   subject: 'Credenciales de Acceso',
+    //   text: 'Te has registrado a *****\nUser: '+username+'\nPassword: ' +password
+    // })
     viewTutorRegister(req, res)
   } catch (error) {
     console.log(error)
