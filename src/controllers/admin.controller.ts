@@ -11,10 +11,24 @@ declare module 'express-session' {
 
 var tutorID: any;
 
+export async function viewTutoradoNivel(req: Request, res: Response) {
+    const { codigo } = req.body
+    const tutorado = await TablaTutor.findOne({
+        where: {
+            codigo
+        }
+    })
+    if (tutorado) {
+        res.render("templates/tutorado/tutorado-nivel")
+    } else {
+        res.send('<strong>Code does not exist</strong>')
+    }
+}
+
 export async function viewAddTutorado(req: Request, res: Response) {
     if (req.session.user) {
         const tutorData = req.session.user[0]
-        res.render("templates/tutor/tutor-admin-addtutorado", {tutorData})
+        res.render("templates/tutor/tutor-admin-addtutorado", { tutorData })
     } else {
         res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
     }
@@ -23,7 +37,7 @@ export async function viewAddTutorado(req: Request, res: Response) {
 export async function viewAddPregunta(req: Request, res: Response) {
     if (req.session.user) {
         const tutorData = req.session.user[0]
-        res.render("templates/tutor/tutor-admin-addpregunta", {tutorData})
+        res.render("templates/tutor/tutor-admin-addpregunta", { tutorData })
     } else {
         res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
     }
@@ -114,9 +128,9 @@ export async function deletePregunta(req: Request, res: Response) {
 export async function createTutorado(req: Request, res: Response) {
     const { idTutor, codigo, nombre, edad, sexo } = req.body
     try {
-      await TablaTutorado.create({ idTutor, codigo, nombre, edad, sexo })
-      res.redirect('/admin')
+        await TablaTutorado.create({ idTutor, codigo, nombre, edad, sexo })
+        res.redirect('/admin')
     } catch (error) {
-      console.log(error)
+        console.log(error)
     }
 }

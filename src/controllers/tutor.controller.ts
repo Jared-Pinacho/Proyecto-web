@@ -70,8 +70,7 @@ export async function createTutor(req: Request, res: Response) {
     // })
     
     // await mailer.sendMail({
-    //   from: "Remitente"
-    ,
+    //   from: "Remitente",
     //   to: email,
     //   subject: 'Credenciales de Acceso',
     //   text: 'Te has registrado a *****\nUser: '+username+'\nPassword: ' +password

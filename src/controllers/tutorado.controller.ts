@@ -14,13 +14,20 @@ export async function viewTutoradoCodigo(req: Request, res: Response) {
 }
 
 export async function viewTutoradoNivel(req: Request, res: Response) {
+  const { codigo } = req.body
   try {
-    const records = await TablaTutorado.findAll({ raw: true })
-    const data = { httpCode: 0, message: "", records }
-    res.render("templates/tutorado/tutorado-nivel", data)
-    // res.status(201).json(records)
+    const tutorado = await TablaTutorado.findOne({
+      where: {
+        codigo
+      }
+    })
+    if (tutorado) {
+      res.render("templates/tutorado/tutorado-nivel")
+    } else {
+      res.send('<strong>Code does not exist <a href="/tutorado/codigo">Back</a></strong>')
+    }
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
