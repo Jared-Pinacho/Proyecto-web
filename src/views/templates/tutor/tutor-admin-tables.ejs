@@ -10,13 +10,58 @@
 </head>
 
 <body>
+    <center><h2>Hola <%= tutorData['username'] %></h2></center>
     <div class="container">
         <div class="div-izq">
             <div class="divTable">
-                <h2>Hola <%= tutorData['username'] %> </h2>
-                
-            </div>
+                <table>
+                    <thead>
+                        <th>
+                            <tr>
+                                <td>#</td>
+                                <td>Codigo</td>
+                                <td>Nombre</td>
+                                <td>Edad</td>
+                                <td>Sexo</td>
+                                <td>Acciones</td>
+                            </tr>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<recordsTutorados.length ;i++){ %>
+                            <tr>
+                                <td>
+                                    <%=recordsTutorados[i]["idTutorado"] %>
+                                </td>
+                                <td>
+                                    <%=recordsTutorados[i]["codigo"] %>
+                                </td>
+                                <td>
+                                    <%=recordsTutorados[i]["nombre"] %>
+                                </td>
+                                <td>
+                                    <%=recordsTutorados[i]["edad"] %>
+                                </td>
+                                <td>
+                                    <%=recordsTutorados[i]["sexo"] %>
+                                </td>
+                                <td>
+                                    <a class="waves-effect waves-light btn"
+                                        href="/tutor/view/edit/<%=recordsTutorados[i][" idTutor"] %>
+                                        ">Editar</a>
+                                    <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
 
+            </div>
+            <div class="content">
+                <form action="" method="post">
+                    <button class="btnForm" type="submit">Añadir</button>
+                </form>
+            </div>
         </div>
         <div class="div-der">
             <div class="divTable">
@@ -33,25 +78,25 @@
                         </tr>
                     </thead>
                     <tbody id="bodyPregunta">
-                        <% for(var i=0; i<records.length ;i++){ %>
+                        <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
                             <tr>
                                 <td>
-                                    <%=records[i]["pregunta"] %>
+                                    <%=recordsPreguntas[i]["pregunta"] %>
                                 </td>
                                 <td>
-                                    <%=records[i]["opcion1"] %>
+                                    <%=recordsPreguntas[i]["opcion1"] %>
                                 </td>
                                 <td>
-                                    <%=records[i]["opcion2"] %>
+                                    <%=recordsPreguntas[i]["opcion2"] %>
                                 </td>
                                 <td>
-                                    <%=records[i]["opcion3"] %>
+                                    <%=recordsPreguntas[i]["opcion3"] %>
                                 </td>
                                 <td>
-                                    <%=records[i]["opcion4"] %>
+                                    <%=recordsPreguntas[i]["opcion4"] %>
                                 </td>
                                 <td>
-                                    <%=records[i]["respuesta"] %>
+                                    <%=recordsPreguntas[i]["respuesta"] %>
                                 </td>
                                 <td>
                                     <a> En proceso</a>

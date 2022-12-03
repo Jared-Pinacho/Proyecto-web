@@ -8,6 +8,7 @@ dotenv.config();
 import tutorRouter from "./routes/tutor.route";
 import preguntaRouter from "./routes/pregunta.route";
 import tutoradoRouter from "./routes/tutorado.route";
+import adminRouter from "./routes/admin.route";
 
 const app = express()
 
@@ -39,5 +40,6 @@ app.use((req, res, next) => {
 app.use('/tutor', tutorRouter)
 app.use('/pregunta', preguntaRouter)
 app.use('/tutorado', tutoradoRouter)
+app.use('/admin', adminRouter)
 
 export default app

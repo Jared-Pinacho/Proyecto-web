@@ -55,7 +55,8 @@ export async function getTutor(req: Request, res: Response) {
 export async function createTutor(req: Request, res: Response) {
   const { nombre, email, username } = req.body
   const passwordRandom = Math.random().toString(36).slice(-11)
-  let password = await bcrypt.hash(passwordRandom, 8)
+  // let password = await bcrypt.hash(passwordRandom, 8)
+  let password = '123'
   
   try {
     await TablaTutor.create({ nombre, username, email, password })
