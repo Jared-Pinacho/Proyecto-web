@@ -51,10 +51,9 @@
                             <% } %>
                     </tbody>
                 </table>
-
             </div>
             <div class="content">
-                <button class="btnForm" type="submit" onclick="location.href='/admin/addtutorado';">Añadir</button>  
+                <button class="btnForm" type="submit" onclick="location.href='/admin/addtutorado';">Crear nuevo tutorado</button>  
             </div>
         </div>
         <div class="div-der">
@@ -63,10 +62,10 @@
                     <thead>
                         <tr>
                             <td>Pregunta</td>
-                            <td>Opcion 1</td>
-                            <td>Opcion 2</td>
-                            <td>Opcion 3</td>
-                            <td>Opcion 4</td>
+                            <td hidden>Opcion 1</td>
+                            <td hidden>Opcion 2</td>
+                            <td hidden>Opcion 3</td>
+                            <td hidden>Opcion 4</td>
                             <td>Respuesta</td>
                             <td>Acciones</td>
                         </tr>
@@ -75,32 +74,35 @@
                         <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
                             <tr>
                                 <td>
-                                    <%=recordsPreguntas[i]["pregunta"] %>
+                                    <div class="wrap"><%=recordsPreguntas[i]["pregunta"] %></div>
                                 </td>
-                                <td>
+                                <td hidden>
                                     <%=recordsPreguntas[i]["opcion1"] %>
                                 </td>
-                                <td>
+                                <td hidden>
                                     <%=recordsPreguntas[i]["opcion2"] %>
                                 </td>
-                                <td>
+                                <td hidden>
                                     <%=recordsPreguntas[i]["opcion3"] %>
                                 </td>
-                                <td>
+                                <td hidden>
                                     <%=recordsPreguntas[i]["opcion4"] %>
                                 </td>
                                 <td>
                                     <%=recordsPreguntas[i]["respuesta"] %>
                                 </td>
                                 <td>
-                                    <a> En proceso</a>
+                                    <a class="waves-effect waves-light btn" href="">Editar</a>
+                                    <a class="waves-effect waves-light btn" href="">Eliminar</a>
                                 </td>
                             </tr>
                             <% } %>
                     </tbody>
                 </table>
             </div>
-
+            <div class="content">
+                <button class="btnForm" type="submit" onclick="location.href='/admin/addpregunta';">Agregar nueva pregunta</button>  
+            </div>
         </div>
     </div>
     <!-- <script src="/assets/js/http.js"></script>

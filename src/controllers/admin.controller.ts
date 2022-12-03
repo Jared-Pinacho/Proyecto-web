@@ -20,6 +20,15 @@ export async function viewAddTutorado(req: Request, res: Response) {
     }
 }
 
+export async function viewAddPregunta(req: Request, res: Response) {
+    if (req.session.user) {
+        const tutorData = req.session.user[0]
+        res.render("templates/tutor/tutor-admin-addpregunta", {tutorData})
+    } else {
+        res.send('<strong> You are not logged in </strong>')
+    }
+}
+
 export async function viewTutorAdminLog(req: Request, res: Response) {
     try {
         if (req.session.user) {
@@ -76,7 +85,7 @@ export async function viewTutorAdmin(req: Request, res: Response) {
             res.send('<strong>Username does not exist or invalid password</strong>')
         }
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 

@@ -11,17 +11,17 @@
 
 <body>
     <div class="container-center">
-        <div class="div-center">
+        <div class="div-center-preg">
             <div class="divForm">
-                <form id="formTutor" action="/tutor/admin/addpregunta" method="post">
+                <form id="formTutor" action="/admin/addpregunta" method="post">
                     <input type="text" class="in" name="pregunta" id="pregunta" placeholder="Pregunta?">
-                    <input hidden type="text" name="idTutor" id="idTutor" value="1">
+                    <input hidden type="text" name="idTutor" id="idTutor" value="<%= tutorData['idTutor'] %> ">
                     <input type="text" class="in" name="opcion1" id="opcion1" placeholder="Opcion 1">
                     <input type="text" class="in" name="opcion2" id="opcion2" placeholder="Opcion 2">
                     <input type="text" class="in" name="opcion3" id="opcion3" placeholder="Opcion 3">
                     <input type="text" class="in" name="opcion4" id="opcion4" placeholder="Opcion 4">
                     <input type="text" class="in" name="respuesta" id="respuesta" placeholder="Respuesta correcta">
-                    <button type="submit" id="btnGuardar" class="btnFormPregunta">Agregar</button>
+                    <button type="submit" id="btnGuardar" class="btnForm">Agregar</button>
                 </form>
             </div>
         </div>

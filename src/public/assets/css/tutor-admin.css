@@ -44,6 +44,16 @@ img {
     margin-top: 20vh;
 }
 
+.div-center-preg {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2vh;
+    padding: 1%;
+    width: 50vw;
+    height: 65vh;
+    margin-left: 25vw;
+    margin-top: 20vh;
+}
+
 .divForm {
     margin: 1vw;
     text-align: center;
@@ -58,6 +68,16 @@ img {
     border-radius: 1vh;
 }
 
+.wrap { 
+  width: 30vw;
+  white-space: pre-wrap;      /* CSS3 */   
+  white-space: -moz-pre-wrap; /* Firefox */    
+  white-space: -pre-wrap;     /* Opera <7 */   
+  white-space: -o-pre-wrap;   /* Opera 7 */    
+  word-wrap: break-word;      /* IE */
+  height:auto;
+}
+
 .divTable thead tr {
     background-color: #009879;
     color: #ffffff;
@@ -66,7 +86,7 @@ img {
 
 .divTable th,
 .divTable td {
-    padding: 0vh 0.8vw;
+    padding: 0.5vh 1vw;
 }
 
 .in {
