@@ -16,7 +16,7 @@ export async function viewAddTutorado(req: Request, res: Response) {
         const tutorData = req.session.user[0]
         res.render("templates/tutor/tutor-admin-addtutorado", {tutorData})
     } else {
-        res.send('<strong> You are not logged in </strong>')
+        res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
     }
 }
 
@@ -25,7 +25,7 @@ export async function viewAddPregunta(req: Request, res: Response) {
         const tutorData = req.session.user[0]
         res.render("templates/tutor/tutor-admin-addpregunta", {tutorData})
     } else {
-        res.send('<strong> You are not logged in </strong>')
+        res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
     }
 }
 
@@ -45,7 +45,7 @@ export async function viewTutorAdminLog(req: Request, res: Response) {
             })
             res.render("templates/tutor/tutor-admin-tables", { tutorData, recordsPreguntas, recordsTutorados })
         } else {
-            res.send('<strong> You are not logged in </strong>')
+            res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
         }
     } catch (error) {
         console.log(error);
