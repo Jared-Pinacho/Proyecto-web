@@ -11,6 +11,10 @@ export const TablaPregunta = sequelize.define('pregunta', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    nivel: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     pregunta: {
         type: DataTypes.STRING,
         allowNull: false

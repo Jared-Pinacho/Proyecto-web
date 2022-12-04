@@ -105,9 +105,9 @@ export async function viewTutorAdmin(req: Request, res: Response) {
 
 //CRUD PREGUNTA
 export async function createPregunta(req: Request, res: Response) {
-    const { pregunta, idTutor, opcion1, opcion2, opcion3, opcion4, respuesta } = req.body
+    const { pregunta, idTutor, nivel, opcion1, opcion2, opcion3, opcion4, respuesta } = req.body
     try {
-        await TablaPregunta.create({ pregunta, idTutor, opcion1, opcion2, opcion3, opcion4, respuesta })
+        await TablaPregunta.create({ pregunta, idTutor, nivel, opcion1, opcion2, opcion3, opcion4, respuesta })
         res.redirect('/admin')
     } catch (error) {
         console.log(error)

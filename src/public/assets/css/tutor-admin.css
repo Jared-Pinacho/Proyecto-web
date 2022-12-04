@@ -39,7 +39,7 @@ img {
     border-radius: 2vh;
     padding: 1%;
     width: 50vw;
-    height: 50vh;
+    height: 40vh;
     margin-left: 25vw;
     margin-top: 20vh;
 }
@@ -49,9 +49,9 @@ img {
     border-radius: 2vh;
     padding: 1%;
     width: 50vw;
-    height: 65vh;
+    height: 75vh;
     margin-left: 25vw;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .divForm {
@@ -99,7 +99,16 @@ img {
     box-sizing: border-box;
 }
 
-
+select {
+    background: white;
+    width: 100%;
+    padding: 2vh 1vw;
+    margin: 1vh 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
 .btnForm {
     margin-top: 0.8vh;

@@ -16,6 +16,11 @@
                 <form id="formTutor" action="/admin/addpregunta" method="post">
                     <input type="text" class="in" name="pregunta" id="pregunta" placeholder="Pregunta?">
                     <input hidden type="text" name="idTutor" id="idTutor" value="<%= tutorData['idTutor'] %> ">
+                    <select name="nivel">
+                        <option value="principiante" selected>Principiante</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
                     <input type="text" class="in" name="opcion1" id="opcion1" placeholder="Opcion 1">
                     <input type="text" class="in" name="opcion2" id="opcion2" placeholder="Opcion 2">
                     <input type="text" class="in" name="opcion3" id="opcion3" placeholder="Opcion 3">

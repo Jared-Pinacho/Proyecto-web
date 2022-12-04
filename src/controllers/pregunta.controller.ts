@@ -7,7 +7,8 @@ export async function viewPreguntaBeginner(req: Request, res: Response) {
     try {
       const records = await TablaPregunta.findAll({
         where: {
-          idTutor: tutorado['idTutor']
+          idTutor: tutorado['idTutor'],
+          nivel: 'principiante'
         }
       })
       res.render("templates/pregunta/pregunta-beginner", { records })
