@@ -18,6 +18,7 @@
                     <thead>
                         <th>
                             <tr>
+                                <td hidden>ID</td>
                                 <td>Codigo</td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -29,6 +30,9 @@
                     <tbody>
                         <% for(var i=0; i<recordsTutorados.length ;i++){ %>
                             <tr>
+                                <td hidden>
+                                    <%=recordsTutorados[i]["idTutorado"] %>
+                                </td>
                                 <td>
                                     <%=recordsTutorados[i]["codigo"] %>
                                 </td>
@@ -42,10 +46,10 @@
                                     <%=recordsTutorados[i]["sexo"] %>
                                 </td>
                                 <td>
-                                    <a class="waves-effect waves-light btn"
-                                        href="/tutor/view/edit/<%=recordsTutorados[i][" idTutor"] %>
-                                        ">Editar</a>
-                                    <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                                    <form action="/admin/table" method="post">
+                                        <input hidden type="text" name="idTutorado" value="<%=recordsTutorados[i]["idTutorado"] %>">
+                                        <input type="submit" value="Ver">
+                                    </form>
                                 </td>
                             </tr>
                             <% } %>

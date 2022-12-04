@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { TablaLeccion } from "../models/leccion.model";
 import { TablaPregunta } from "../models/pregunta.model";
 import { TablaTutor } from "../models/tutor.model";
 import { TablaTutorado } from "../models/tutorado.model";
@@ -29,6 +30,20 @@ export async function viewAddTutorado(req: Request, res: Response) {
     if (req.session.user) {
         const tutorData = req.session.user[0]
         res.render("templates/tutor/tutor-admin-addtutorado", { tutorData })
+    } else {
+        res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
+    }
+}
+
+export async function viewAddTutoradoTable(req: Request, res: Response) {
+    const { idTutorado } = req.body
+    if (req.session.user) {
+        const records = await TablaLeccion.findAll({
+            where: {
+                idTutorado
+            }
+        })
+        res.render("templates/tutorado/tutorado-table", { records })
     } else {
         res.send('<strong> You are not <a href="/tutor/login">logged in</a> </strong>')
     }
@@ -88,8 +103,6 @@ export async function viewTutorAdmin(req: Request, res: Response) {
             })
 
             tutorID = tutor?.dataValues['idTutor']
-            console.log(tutorID);
-
             req.flash('user', tutor?.dataValues)
             req.session.user = req.flash('user')
             const tutorData = req.session.user[0]

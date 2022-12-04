@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de <%=records[0]["nombre"] %></title>
+    <link rel="stylesheet" href="/assets/css/tutor-admin.css">
+</head>
+
+<body>
+    <div class="container-center">
+        <div class="div-center-preg">
+            <h2>Lecciones de <%=records[0]["nombre"] %></h1>
+            <div class="divTable">
+                <table>
+                    <thead>
+                        <th>
+                            <tr>
+                                <td>Fecha</td>
+                                <td>Nivel</td>
+                                <td>Aciertos</td>
+                            </tr>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<records.length ;i++){ %>
+                            <tr>
+                                <td>
+                                    <%=records[i]["createdAt"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["nivel"] %>
+                                </td>
+                                <td>
+                                    <%=records[i]["aciertos"] %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
