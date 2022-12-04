@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { viewPreguntaBeginner } from "../controllers/pregunta.controller";
+import { saveLeccionBeginner, viewPreguntaBeginner } from "../controllers/pregunta.controller";
 const router = Router()
 
 //routes /pregunta
 router.get('/beginner', viewPreguntaBeginner)
+router.post('/beginner', saveLeccionBeginner)
 
 //CRUD
 // router.post('/crud', createPregunta)
