@@ -1,13 +1,20 @@
 import { Request, Response } from "express";
 import { TablaPregunta } from "../models/pregunta.model";
+import { tutorado } from "../controllers/tutorado.controller";
 
-export async function viewPregunta(req: Request, res: Response) {
-  try {
-    const records = await TablaPregunta.findAll({ raw: true })
-    const data = { httpCode: 0, message: "", records }
-    res.render("templates/pregunta/pregunta-view", data)
-    // res.status(201).json(records)
-  } catch (error) {
-    console.log(error)
+export async function viewPreguntaBeginner(req: Request, res: Response) {
+  if (tutorado) {
+    try {
+      const records = await TablaPregunta.findAll({
+        where: {
+          idTutor: tutorado['idTutor']
+        }
+      })
+      res.render("templates/pregunta/pregunta-beginner", { records })
+    } catch (error) {
+      console.log(error)
+    }
+  } else {
+    res.send('<strong> You have not entered a <a href="/tutorado/codigo">code</a> </strong>')
   }
 }
