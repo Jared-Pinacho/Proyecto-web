@@ -1,9 +1,9 @@
 import express from 'express'
 import path from 'path'
-//import dotenv from "dotenv";
+import dotenv from "dotenv";
 import session from 'express-session';
 import flash from 'connect-flash';
-//dotenv.config();
+dotenv.config();
 
 import tutorRouter from "./routes/tutor.route";
 import preguntaRouter from "./routes/pregunta.route";
