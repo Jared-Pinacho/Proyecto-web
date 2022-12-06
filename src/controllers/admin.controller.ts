@@ -130,11 +130,15 @@ export async function createPregunta(req: Request, res: Response) {
 export async function deletePregunta(req: Request, res: Response) {
     try {
         const { idPregunta } = req.params;
-        const entity = await TablaPregunta.findByPk(idPregunta);
-        await entity?.destroy()
+        await TablaPregunta.destroy({
+            where: {
+                idPregunta
+            }
+        })
     } catch (error) {
         console.log(error);
     }
+    
 }
 
 // CRUD TUTURADO

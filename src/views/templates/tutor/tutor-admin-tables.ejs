@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>Tutor Admin Tables</title>
     <link rel="stylesheet" href="/assets/css/tutor-admin.css">
 </head>
@@ -65,6 +66,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <td>Nivel</td>
                             <td>Pregunta</td>
                             <td hidden>Opcion 1</td>
                             <td hidden>Opcion 2</td>
@@ -77,6 +79,9 @@
                     <tbody id="bodyPregunta">
                         <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
                             <tr>
+                                <td>
+                                    <%=recordsPreguntas[i]["nivel"] %>
+                                </td>
                                 <td>
                                     <div class="wrap"><%=recordsPreguntas[i]["pregunta"] %></div>
                                 </td>
@@ -96,8 +101,7 @@
                                     <%=recordsPreguntas[i]["respuesta"] %>
                                 </td>
                                 <td>
-                                    <a class="waves-effect waves-light btn" href="">Editar</a>
-                                    <a class="waves-effect waves-light btn" href="">Eliminar</a>
+                                    <button itemid="<%=recordsPreguntas[i]["idPregunta"] %>">Eliminar</button>
                                 </td>
                             </tr>
                             <% } %>
@@ -109,8 +113,8 @@
             </div>
         </div>
     </div>
-    <!-- <script src="/assets/js/http.js"></script>
-    <script src="/assets/js/tutor-admin.js"></script> -->
+    <script src="/assets/js/http.js"></script>
+    <script src="/assets/js/tutor-admin.js"></script>
 </body>
 
 </html>

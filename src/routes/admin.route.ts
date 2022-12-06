@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createPregunta, createTutorado, viewAddPregunta, viewAddTutorado, viewAddTutoradoTable, viewTutorAdmin, viewTutorAdminLog } from "../controllers/admin.controller"
+import { createPregunta, createTutorado, deletePregunta, viewAddPregunta, viewAddTutorado, viewAddTutoradoTable, viewTutorAdmin, viewTutorAdminLog } from "../controllers/admin.controller"
 const router = Router()
 
 // routes /admin
@@ -15,7 +15,7 @@ router.post('/addpregunta', createPregunta)
 //CRUD PREGUNTA
 router.get('/', viewTutorAdminLog)
 // router.post('/admin', createPregunta)
-// router.delete('/admin/:idPregunta', deletePregunta)
+router.delete('/admin/:idPregunta', deletePregunta)
 
 
 export default router

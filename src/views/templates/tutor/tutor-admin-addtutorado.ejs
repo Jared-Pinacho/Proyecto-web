@@ -13,18 +13,20 @@
     <div class="container-center">
         <div class="div-center">
             <div class="divForm">
-                <form id="formTutorado" action="/admin/addtutorado" method="post">
+                <form id="formulario" action="/admin/addtutorado" method="post">
                     <input hidden type="text" name="idTutor" id="idTutor" value="<%= tutorData['idTutor'] %> ">
                     <input hidden type="text" name="codigo" id="codigo">
-                    <input type="text" class="in" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" class="in" name="nombre" id="nombre" placeholder="Nombre completo">
                     <input type="number" class="in" name="edad" id="edad" placeholder="Edad">
                     <input type="text" class="in" name="sexo" id="sexo" placeholder="Sexo">
                     <button type="submit" id="btnGuardar" class="btnForm">Añadir</button>
                 </form>
             </div>
+            <button class="btnVolver" onclick="location.href='/admin';">Cancelar</button>
         </div>
     </div>
     <script src="/assets/js/tutorado-crud.js"></script>
+    <script src="/assets/js/validar.js"></script>
 </body>
 
 </html>
