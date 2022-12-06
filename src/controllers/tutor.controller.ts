@@ -55,26 +55,25 @@ export async function getTutor(req: Request, res: Response) {
 export async function createTutor(req: Request, res: Response) {
   const { nombre, email, username } = req.body
   const passwordRandom = Math.random().toString(36).slice(-11)
-  // let password = await bcrypt.hash(passwordRandom, 8)
-  let password = '123'
-  
+  let password = await bcrypt.hash(passwordRandom, 8)
+  // let password = '123'
+
   try {
     await TablaTutor.create({ nombre, username, email, password })
-    // const mailer = nodemailer.createTransport({
-    //   host: process.env.MAILER_HOST,
-    //   port: 587,
-    //   auth: {
-    //       user: process.env.MAILER_USER,
-    //       pass: process.env.MAILER_PASSWORD
-    //   }
-    // })
-    
-    // await mailer.sendMail({
-    //   from: "Remitente",
-    //   to: email,
-    //   subject: 'Credenciales de Acceso',
-    //   text: 'Te has registrado a *****\nUser: '+username+'\nPassword: ' +password
-    // })
+    const mailer = nodemailer.createTransport({
+      service: process.env.MAILER_SERVICE,
+      auth: {
+        user: process.env.MAILER_USER,
+        pass: process.env.MAILER_PASSWORD
+      }
+    })
+
+    await mailer.sendMail({
+      from: "< Proyecto Web >",
+      to: email,
+      subject: 'Credenciales de Acceso',
+      html: '<h1> Te has registrado a <strong style="color: red;"> Englishemy </strong></h1><br><h3>User:</h3> ' + username + '<br><h3>Password:</h3> ' + password
+    })
     viewTutorRegister(req, res)
   } catch (error) {
     console.log(error)
