@@ -86,3 +86,11 @@ function verificarRespuestas() {
 }
 
 mostrarPreguntas();
+
+const $form = document.getElementById('formulario')
+const $inputAciertos = document.getElementById('aciertos')
+
+$form.addEventListener('click', (event) => {
+    $inputAciertos.setAttribute('value', puntuacion)
+    console.log(puntuacion);
+})

@@ -8,16 +8,20 @@ export const TablaLeccion = sequelize.define('leccion', {
         primaryKey: true,
         autoIncrement: true
     },
-    // idTutorado: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false
-    // },
-    dificultad: {
+    idTutorado: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    nombre: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    tema: {
+    nivel: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+    aciertos: {
+        type: DataTypes.INTEGER,
         allowNull: false
     }
 }, {

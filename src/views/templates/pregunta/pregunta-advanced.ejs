@@ -39,10 +39,10 @@
     <img src="" alt="">
     <h2 id="puntuacion-titulo">Your score</h2>
     <h2 id="puntuacion"></h2>
-    <form action="/pregunta/beginner" method="post">
+    <form action="/pregunta/advanced" method="post">
       <input type="text" name="idTutorado" value="<%= tutorado['idTutorado'] %> " hidden>
       <input type="text" name="nombre" value="<%= tutorado['nombre'] %> " hidden>
-      <input type="text" name="nivel" value="principiante" hidden>
+      <input type="text" name="nivel" value="avanzado" hidden>
       <input type="text" name="aciertos" id="aciertos" hidden>
       <button id="formulario" type="submit">Guadar leccion</button>
     </form>
