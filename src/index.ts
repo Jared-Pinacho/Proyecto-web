@@ -14,13 +14,12 @@ async function main(){
         // await sequelize.sync({ alter: true }) Modificar los cambios a la tabla sin borrarla
         // await sequelize.sync() Crea tablas si no existen
         
-<<<<<<< HEAD
+
         // await sequelize.sync({ alter: true })
         // await sequelize.sync({force:true})
-=======
+
      //await sequelize.sync({ alter: true })
-         await sequelize.sync({force:true})
->>>>>>> 3be1d149b2a9b57402b9e8739f92ab86ca607d4f
+        // await sequelize.sync({force:true})
         app.listen(4000)
         console.log('Server on -> port',4000);
         
