@@ -71,14 +71,14 @@ label {
 input[type=text] {
     background-color: #c2fcf3;
     border: none;
-    color: white;
+    color: black;
     border-radius: 20px;
 }
 
 input[type=password] {
     background-color: #c2fcf3;
     border: none;
-    color: white;
+    color: black;
     border-radius: 20px;
 }
 

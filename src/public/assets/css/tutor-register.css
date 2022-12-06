@@ -69,21 +69,21 @@ label {
 input[type=text] {
     background-color: #F9F871;
     border: none;
-    color: white;
+    color: black;
     border-radius: 20px;
 }
 
 input[type=email] {
     background-color: #F9F871;
     border: none;
-    color: white;
+    color: black;
     border-radius: 20px;
 }
 
 input[type=password] {
     background-color: #F9F871;
     border: none;
-    color: white;
+    color: black;
     border-radius: 20px;
 }
 
