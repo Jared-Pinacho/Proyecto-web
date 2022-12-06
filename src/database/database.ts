@@ -9,7 +9,7 @@ const DB_DIALECT = "postgres";
 export const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: DB_DIALECT,
-  
+  port: 5432,
   dialectOptions: {
     encrypt: true,
     ssl: {
