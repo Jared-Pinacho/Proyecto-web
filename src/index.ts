@@ -10,7 +10,7 @@ async function main(){
     try {
         // await sequelize.authenticate()
         // console.log('DB on')
-        // await sequelize.sync({force:true}) Borrar y crear la tabla al ejecutar
+       await sequelize.sync({force:true})   //Borrar y crear la tabla al ejecutar
         // await sequelize.sync({ alter: true }) Modificar los cambios a la tabla sin borrarla
         // await sequelize.sync() Crea tablas si no existen
         

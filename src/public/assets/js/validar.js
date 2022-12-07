@@ -10,6 +10,6 @@ $form.addEventListener('submit', (e) =>{
         }
     }
     if(!flag){
-        alert('Fill in all the fields')
+        alert('Rellene el campo')
     }
 })
