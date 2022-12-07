@@ -23,6 +23,10 @@ export const TablaLeccion = sequelize.define('leccion', {
     aciertos: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    fecha: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     timestamps: true,

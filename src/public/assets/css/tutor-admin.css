@@ -10,6 +10,16 @@ img {
     height: 55%;
 }
 
+header{
+    display: flex;
+    height: 10vh;
+    margin-bottom: 1vh;
+}
+
+h2 {
+    padding-left: 30vw;
+}
+
 .container {
     display: flex;
     flex-direction: row;

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { TablaPregunta } from "../models/pregunta.model";
 import { TablaLeccion } from "../models/leccion.model";
 import { tutorado } from "../controllers/tutorado.controller";
+import moment from "moment";
 
 export async function viewPreguntaBeginner(req: Request, res: Response) {
   if (tutorado) {
@@ -59,8 +60,10 @@ export async function viewPreguntaAdvanced(req: Request, res: Response) {
 
 export async function saveLeccion(req: Request, res: Response) {
   const { idTutorado, nombre, nivel, aciertos } = req.body
+  const fecha = moment().format('MMMM Do YYYY, h:mm:ss a');
+  console.log(fecha);
   try {
-    await TablaLeccion.create({ idTutorado, nombre, nivel, aciertos})
+    await TablaLeccion.create({ idTutorado, nombre, nivel, aciertos, fecha})
     res.redirect('/tutorado/nivel')
   } catch (error) {
     console.log(error)
