@@ -13,7 +13,7 @@
     <div class="container-center">
         <div class="div-center-preg">
             <div class="divForm">
-                <form id="formTutor" action="/admin/addpregunta" method="post">
+                <form id="formulario" action="/admin/addpregunta" method="post">
                     <input type="text" class="in" name="pregunta" id="pregunta" placeholder="Pregunta?">
                     <input hidden type="text" name="idTutor" id="idTutor" value="<%= tutorData['idTutor'] %> ">
                     <select name="nivel">
@@ -29,10 +29,10 @@
                     <button type="submit" id="btnGuardar" class="btnForm">Agregar</button>
                 </form>
             </div>
+            <button class="btnVolver" onclick="location.href='/admin';">Cancelar</button>
         </div>
     </div>
-    <script src="/assets/js/http.js"></script>
-    <script src="/assets/js/tutor-admin.js"></script>
+    <script src="/assets/js/validar.js"></script>
 </body>
 
 </html>

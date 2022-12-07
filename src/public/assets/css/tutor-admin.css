@@ -19,6 +19,31 @@ img {
     text-align: center;
 }
 
+.btnVolver {
+    width: 100%;
+    margin-top: 0.8vh;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fc9191;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btnVolver:hover {
+    background-color: #e0364d;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
 .div-izq {
     background-color: rgba(168, 235, 18, 0.2);
     border-radius: 5%;
@@ -39,7 +64,7 @@ img {
     border-radius: 2vh;
     padding: 1%;
     width: 50vw;
-    height: 40vh;
+    height: 46vh;
     margin-left: 25vw;
     margin-top: 20vh;
 }
@@ -49,7 +74,7 @@ img {
     border-radius: 2vh;
     padding: 1%;
     width: 50vw;
-    height: 75vh;
+    height: 82vh;
     margin-left: 25vw;
     margin-top: 10vh;
 }
@@ -69,7 +94,7 @@ img {
 }
 
 .wrap { 
-  width: 30vw;
+  width: 24vw;
   white-space: pre-wrap;      /* CSS3 */   
   white-space: -moz-pre-wrap; /* Firefox */    
   white-space: -pre-wrap;     /* Opera <7 */   

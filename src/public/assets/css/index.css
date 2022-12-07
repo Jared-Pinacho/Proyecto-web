@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+* {
+    font-family: 'Mochiy Pop One';
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/assets/img/fondo2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 75vw;
+    max-width: 2000px;
+    min-width: 320px;
+    margin: auto;
+}
+
+img {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.bienvenida {
+    max-width: 2000px;
+    min-width: 320px;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    height: 400;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: #faa994;
+    border-radius: 10px;
+}
+
+.contenedorBotones {
+    max-width: 2000px;
+    min-width: 320px;
+}
+
+.botonesInicio {
+    place-content: center;
+    display: block;
+    margin: auto;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #faa994;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botonesInicio:hover {
+    background: #fff;
+    color: #faa994;
+}
+
+footer {
+    max-width: 2000px;
+    min-width: 320px;
+    margin-top: 9rem;
+    padding: 21px;
+    text-align: center;
+    background-color: #faa994;
+    color: #fff;
+}

@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include("./components/headers") -%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <title>E N G L I S H E M Y</title>
 </head>
+
 <body>
-    <h1>Pagina EJS test1</h1>
+
+    <header>
+        <img src="/assets/img/TITULO.png" alt="">
+    </header>
+    <div class="contenido">
+        <div class="tituloInicio">
+            <div class="bienvenida">
+                <p>Se bienvenido a ENGLYSHEMY la plataforma de Ingles
+                    para niños, en ella encontraras lecciones que ayudaran
+                    a tu hijo a mejorar en su aprendizaje de Ingles.
+                </p>
+            </div>
+            <div class="contenedorBotones">
+                <button class="botonesInicio" id="iniciarSesion" onclick="location.href='/tutor/login'"> <span> Iniciar Sesion </span></button>
+                <button class="botonesInicio" onclick="location.href='/tutorado/codigo'"> <span> Iniciar con Codigo </span> </button>
+                <button class="botonesInicio" onclick="location.href='/tutor/register'"> <span> Registrate </span></button>
+            </div>
+
+        </div>
+    </div>
+
 </body>
+
+<footer>
+    <small>&copy; 2022 <b> EQUIPO WEB </b> - Todos los Derechos Reservados.</small>
+</footer>
+
 </html>

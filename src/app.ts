@@ -5,6 +5,7 @@ import session from 'express-session';
 import flash from 'connect-flash';
 dotenv.config();
 
+import indexRouter from "./routes/index.route";
 import tutorRouter from "./routes/tutor.route";
 import preguntaRouter from "./routes/pregunta.route";
 import tutoradoRouter from "./routes/tutorado.route";
@@ -25,7 +26,7 @@ app.use(session({
     secret: 'secretkey',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false, httpOnly: false, maxAge: 1000 * 60 * 60 },
+    cookie: { sameSite: 'strict' }
 }))
 app.use(flash())
 
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 })
 
 //routes
+app.use('/', indexRouter)
 app.use('/tutor', tutorRouter)
 app.use('/pregunta', preguntaRouter)
 app.use('/tutorado', tutoradoRouter)
