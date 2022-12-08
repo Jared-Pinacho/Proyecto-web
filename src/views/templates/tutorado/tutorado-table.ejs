@@ -13,7 +13,7 @@
 <body>
     <div class="container-center">
         <div class="div-center-preg">
-            <h2>Lecciones de <%=records[0]["nombre"] %></h1>
+            <h3>Lecciones de <%=records[0]["nombre"] %></h3>
             <div class="divTable">
                 <table>
                     <thead>
@@ -29,7 +29,7 @@
                         <% for(var i=0; i<records.length ;i++){ %>
                             <tr>
                                 <td>
-                                    <%=records[i]["createdAt"] %>
+                                    <%=records[i]["fecha"]%>
                                 </td>
                                 <td>
                                     <%=records[i]["nivel"] %>

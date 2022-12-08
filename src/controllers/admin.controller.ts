@@ -3,6 +3,7 @@ import { TablaLeccion } from "../models/leccion.model";
 import { TablaPregunta } from "../models/pregunta.model";
 import { TablaTutor } from "../models/tutor.model";
 import { TablaTutorado } from "../models/tutorado.model";
+import bcrypt from 'bcrypt'
 
 declare module 'express-session' {
     export interface SessionData {
@@ -86,30 +87,35 @@ export async function viewTutorAdmin(req: Request, res: Response) {
         const { username, password } = req.body
         const tutor = await TablaTutor.findOne({
             where: {
-                username,
-                password
+                username
+                
             }
         })
         if (tutor) {
-            const recordsPreguntas = await TablaPregunta.findAll({
-                where: {
-                    idTutor: tutor?.dataValues['idTutor']
-                }
-            })
-            const recordsTutorados = await TablaTutorado.findAll({
-                where: {
-                    idTutor: tutor?.dataValues['idTutor']
-                }
-            })
+            const flag = bcrypt.compareSync(password, tutor?.dataValues['password'])
+            if(flag){
+                const recordsPreguntas = await TablaPregunta.findAll({
+                    where: {
+                        idTutor: tutor?.dataValues['idTutor']
+                    }
+                })
+                const recordsTutorados = await TablaTutorado.findAll({
+                    where: {
+                        idTutor: tutor?.dataValues['idTutor']
+                    }
+                })
 
-            tutorID = tutor?.dataValues['idTutor']
-            req.flash('user', tutor?.dataValues)
-            req.session.user = req.flash('user')
-            const tutorData = req.session.user[0]
-            const data = { httpCode: 0, tutorData, recordsPreguntas, recordsTutorados }
-            res.render("templates/tutor/tutor-admin-tables", data)
+                tutorID = tutor?.dataValues['idTutor']
+                req.flash('user', tutor?.dataValues)
+                req.session.user = req.flash('user')
+                const tutorData = req.session.user[0]
+                const data = { httpCode: 0, tutorData, recordsPreguntas, recordsTutorados }
+                res.render("templates/tutor/tutor-admin-tables", data)
+            } else{
+                res.send('<strong>Invalid password</strong>')
+            }
         } else {
-            res.send('<strong>Username does not exist or invalid password</strong>')
+            res.send('<strong>Username does not exist</strong>')
         }
     } catch (error) {
         console.log(error)
