@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <title>Tutor Admin Tables</title>
+    <title>Tutor <%= tutorData['username'] %></title>
     <link rel="stylesheet" href="/assets/css/tutor-admin.css">
 </head>
 
 <body>
     <header>
             <button class="btnForm" onclick="location.href='/tutorado/codigo';">Ingresa Codigo</button>
-            <h2>Bienvenido <%= tutorData['username'] %></h2>
+            <h2>Bienvenido <%= tutorData['nombre'] %></h2>
     </header>
     
     
@@ -33,7 +33,7 @@
                             </tr>
                         </th>
                     </thead>
-                    <tbody>
+                    <tbody id="bodyTutorado">
                         <% for(var i=0; i<recordsTutorados.length ;i++){ %>
                             <tr>
                                 <td hidden>
@@ -56,6 +56,7 @@
                                         <input hidden type="text" name="idTutorado" value="<%=recordsTutorados[i]["idTutorado"] %>">
                                         <input type="submit" value="Ver">
                                     </form>
+                                    <button id="<%= recordsTutorados[i]["idTutorado"] %>">Eliminar</button>
                                 </td>
                             </tr>
                             <% } %>
@@ -83,6 +84,7 @@
                     </thead>
                     <tbody id="bodyPregunta">
                         <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
+                            <% if(recordsPreguntas[i]["nivel"] == 'principiante'){ %> 
                             <tr>
                                 <td>
                                     <%=recordsPreguntas[i]["nivel"] %>
@@ -106,10 +108,71 @@
                                     <%=recordsPreguntas[i]["respuesta"] %>
                                 </td>
                                 <td>
-                                    <button itemid="<%=recordsPreguntas[i]["idPregunta"] %>">Eliminar</button>
+                                    <button id="<%= recordsPreguntas[i]["idPregunta"] %>">Eliminar</button>
                                 </td>
                             </tr>
+                            <% } %> 
                             <% } %>
+                            <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
+                                <% if(recordsPreguntas[i]["nivel"] == 'intermedio'){ %> 
+                                <tr>
+                                    <td>
+                                        <%=recordsPreguntas[i]["nivel"] %>
+                                    </td>
+                                    <td>
+                                        <div class="wrap"><%=recordsPreguntas[i]["pregunta"] %></div>
+                                    </td>
+                                    <td hidden>
+                                        <%=recordsPreguntas[i]["opcion1"] %>
+                                    </td>
+                                    <td hidden>
+                                        <%=recordsPreguntas[i]["opcion2"] %>
+                                    </td>
+                                    <td hidden>
+                                        <%=recordsPreguntas[i]["opcion3"] %>
+                                    </td>
+                                    <td hidden>
+                                        <%=recordsPreguntas[i]["opcion4"] %>
+                                    </td>
+                                    <td>
+                                        <%=recordsPreguntas[i]["respuesta"] %>
+                                    </td>
+                                    <td>
+                                        <button id="<%= recordsPreguntas[i]["idPregunta"] %>">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <% } %> 
+                                <% } %>
+                                <% for(var i=0; i<recordsPreguntas.length ;i++){ %>
+                                    <% if(recordsPreguntas[i]["nivel"] == 'avanzado'){ %> 
+                                    <tr>
+                                        <td>
+                                            <%=recordsPreguntas[i]["nivel"] %>
+                                        </td>
+                                        <td>
+                                            <div class="wrap"><%=recordsPreguntas[i]["pregunta"] %></div>
+                                        </td>
+                                        <td hidden>
+                                            <%=recordsPreguntas[i]["opcion1"] %>
+                                        </td>
+                                        <td hidden>
+                                            <%=recordsPreguntas[i]["opcion2"] %>
+                                        </td>
+                                        <td hidden>
+                                            <%=recordsPreguntas[i]["opcion3"] %>
+                                        </td>
+                                        <td hidden>
+                                            <%=recordsPreguntas[i]["opcion4"] %>
+                                        </td>
+                                        <td>
+                                            <%=recordsPreguntas[i]["respuesta"] %>
+                                        </td>
+                                        <td>
+                                            <button id="<%= recordsPreguntas[i]["idPregunta"] %>">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <% } %> 
+                                    <% } %>
                     </tbody>
                 </table>
             </div>

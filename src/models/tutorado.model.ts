@@ -33,7 +33,7 @@ export const TablaTutorado = sequelize.define('tutorado', {
     tableName: 'Tutorado'
 })
 
-// TablaTutorado.hasMany(TablaLeccion, {
-//     foreignKey: "idTutorado",
-//     sourceKey: "idTutorado",
-//   });
+TablaTutorado.hasMany(TablaLeccion, {
+    foreignKey: "idTutorado",
+    sourceKey: "idTutorado",
+  });

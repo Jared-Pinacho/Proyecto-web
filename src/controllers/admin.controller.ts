@@ -135,11 +135,8 @@ export async function createPregunta(req: Request, res: Response) {
 export async function deletePregunta(req: Request, res: Response) {
     try {
         const { idPregunta } = req.params;
-        await TablaPregunta.destroy({
-            where: {
-                idPregunta
-            }
-        })
+        const entity = await TablaPregunta.findByPk(idPregunta);
+        await entity?.destroy();
     } catch (error) {
         console.log(error);
     }
@@ -155,4 +152,15 @@ export async function createTutorado(req: Request, res: Response) {
     } catch (error) {
         console.log(error)
     }
+}
+
+export async function deleteTutorado(req: Request, res: Response) {
+    try {
+        const { idTutorado } = req.params;
+        const entity = await TablaTutorado.findByPk(idTutorado);
+        await entity?.destroy();
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
