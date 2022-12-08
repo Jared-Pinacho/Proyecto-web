@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
+import bcrypt from 'bcrypt'
 import { TablaLeccion } from "../models/leccion.model";
 import { TablaPregunta } from "../models/pregunta.model";
 import { TablaTutor } from "../models/tutor.model";
 import { TablaTutorado } from "../models/tutorado.model";
-import bcrypt from 'bcrypt'
 
 declare module 'express-session' {
     export interface SessionData {
@@ -88,7 +88,6 @@ export async function viewTutorAdmin(req: Request, res: Response) {
         const tutor = await TablaTutor.findOne({
             where: {
                 username
-                
             }
         })
         if (tutor) {
@@ -104,7 +103,7 @@ export async function viewTutorAdmin(req: Request, res: Response) {
                         idTutor: tutor?.dataValues['idTutor']
                     }
                 })
-
+    
                 tutorID = tutor?.dataValues['idTutor']
                 req.flash('user', tutor?.dataValues)
                 req.session.user = req.flash('user')
@@ -136,11 +135,8 @@ export async function createPregunta(req: Request, res: Response) {
 export async function deletePregunta(req: Request, res: Response) {
     try {
         const { idPregunta } = req.params;
-        await TablaPregunta.destroy({
-            where: {
-                idPregunta
-            }
-        })
+        const entity = await TablaPregunta.findByPk(idPregunta);
+        await entity?.destroy();
     } catch (error) {
         console.log(error);
     }
@@ -156,4 +152,15 @@ export async function createTutorado(req: Request, res: Response) {
     } catch (error) {
         console.log(error)
     }
+}
+
+export async function deleteTutorado(req: Request, res: Response) {
+    try {
+        const { idTutorado } = req.params;
+        const entity = await TablaTutorado.findByPk(idTutorado);
+        await entity?.destroy();
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
